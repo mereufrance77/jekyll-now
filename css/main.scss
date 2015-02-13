@@ -14,10 +14,10 @@ $base-line-height: 1.5;
 $spacing-unit:     30px;
 
 $text-color:       #111;
-$background-color: #fdfdfd;
-$brand-color:      #2a7ae2;
+$background-color: #ffffff;
+$brand-color:      #ae568e;
 
-$grey-color:       #828282;
+$grey-color:       #4e4e4e;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
 
@@ -27,6 +27,8 @@ $content-width:    800px;
 $on-palm:          600px;
 $on-laptop:        800px;
 
+$header-background-color: rgb(255,179,179);
+$footer-background-color: $header-background-color;
 
 
 // Using media queries with like this:
@@ -50,3 +52,13 @@ $on-laptop:        800px;
         "layout",
         "syntax-highlighting"
 ;
+
+
+
+.post-list .post-link{
+	font-size: 14px;
+	line-height: 16px;
+}
+.post-list > li {
+    margin-bottom: 7px;
+}

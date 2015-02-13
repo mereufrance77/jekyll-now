@@ -1,0 +1,29 @@
+---
+layout: post
+title:  "computer-aided design (Feb 4)"
+date:   2015-02-04 19:09:52
+categories: weeks
+---
+This week, we were to draw, render, animate, simulate the possible final project. 
+For my work I used three of the  2-D, 3-D softwares in the list.
+
+I prefered to use Sketchup Make to build a  heel's mechanism that's possible to print easily
+![My helpful..screenshot](/images/schema scarpa2.jpg)
+
+I tried Antimony to design the heel. It's good for parametric heel, it's possible to change the height and modify  his form.
+
+![My helpful..screenshot](/images/aTacco1.jpg) 
+There are some variations of the heel's form:
+I used a "twist", modifier with three sizes: 90° -60-25 degrees, 
+
+![My helpful..screenshot](/images/tacco-rot.jpg)
+
+
+And finally I thinked to model my 3d shoes with Blender:
+
+
+
+ 
+ 
+
+

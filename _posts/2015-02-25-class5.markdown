@@ -1,0 +1,13 @@
+---
+layout: post
+title:  "3D scanning and printing (Feb 25)"
+date:   2015-02-25 16:09:52
+categories: weeks
+---
+That's a first 
+
+
+ 
+ 
+
+
