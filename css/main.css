@@ -149,6 +149,7 @@ pre {
   border-top: 5px solid #0e0e0e;
   border-bottom: 1px solid #b4b4b4;
   min-height: 56px;
+  background-color: #ffb3b3;
   position: relative; }
 
 .site-title {
@@ -206,6 +207,7 @@ pre {
  * Site footer
  */
 .site-footer {
+  background-color: #ffb3b3;
   border-top: 1px solid #b4b4b4;
   padding: 30px 0; }
 
