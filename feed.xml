@@ -6,8 +6,8 @@
 </description>
     <link>http://127.0.0.1:4000/</link>
     <atom:link href="http://127.0.0.1:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 13 Feb 2015 11:26:19 +0100</pubDate>
-    <lastBuildDate>Fri, 13 Feb 2015 11:26:19 +0100</lastBuildDate>
+    <pubDate>Tue, 17 Feb 2015 12:27:44 +0100</pubDate>
+    <lastBuildDate>Tue, 17 Feb 2015 12:27:44 +0100</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -100,11 +100,11 @@
 
 </description>
         <pubDate>Wed, 29 Apr 2015 10:09:52 +0200</pubDate>
-        <link>http://127.0.0.1:4000/classes/2015/04/29/class12.html</link>
-        <guid isPermaLink="true">http://127.0.0.1:4000/classes/2015/04/29/class12.html</guid>
+        <link>http://127.0.0.1:4000/weeks/2015/04/29/class12.html</link>
+        <guid isPermaLink="true">http://127.0.0.1:4000/weeks/2015/04/29/class12.html</guid>
         
         
-        <category>classes</category>
+        <category>weeks</category>
         
       </item>
     
