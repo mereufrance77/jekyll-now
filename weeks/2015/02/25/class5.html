@@ -71,9 +71,10 @@
   </header>
 
   <article class="post-content">
-    <p>This week assignment is about creating a 3D model which cannot be made subtractively and print it, and possibly 3D Scan an object and try to print it too. I made several experiments for both tasks, using different software and approaches.
-#Modeling a 3D object for printing 
-This part is very important to testing a prototype of my model, so I decided use first my antimony’s model of the heel , and later a high heel model downloaded and modified by me with 123 Meshmixer</p>
+    <p>This week assignment is about creating a 3D model which cannot be made subtractively and print it, and possibly 3D Scan an object and try to print it too. I made several experiments for both tasks, using different software and approaches.</p>
+
+<h3 id="modeling-a-3d-object-for-printing">Modeling a 3D object for printing</h3>
+<p>This part is very important to testing a prototype of my model, so I decided use first my antimony’s model of the heel , and later a high heel model downloaded and modified by me with 123 Meshmixer</p>
 
 <p>Also I was interested in studying the inherent limits of the FDM printing, as this is the technique used by the reprap Prusa and KentStrapper we have in the lab, trying to print objects with and without support structures and different plastic filaments</p>
 
@@ -116,12 +117,14 @@ This part is very important to testing a prototype of my model, so I decided use
 I took a old model of high heel, that I had saved in the past and I thinkred to modify with MeshMixer.
 MeshMixer have a lot of tools. I used specials brush from sculpt, drag brush and inflate brush, and the result was good.  </p>
 
-<p><img src="/images/shoes2.jpg" alt="My helpful..screenshot" />
-#3-D printing the objects
-I moved the objects into the Cura software provided with the Kentstrapper and prepared it for printing. The shoes mesh required a support structure to be printed, and while this would be possible with other kind of objects, accessing and removing the support structure from the inside of the mesh wouldn’t be possible. </p>
+<p><img src="/images/shoes2.jpg" alt="My helpful..screenshot" /></p>
 
-<p><img src="/images/screenshot.jpg" alt="My helpful..screenshot" />
-<img src="/images/screenshot 2.jpg" alt="My helpful..screenshot" /></p>
+<h3 id="d-printing-the-objects">3-D printing the objects</h3>
+<p>I moved the objects into the Cura software provided with the Kentstrapper and prepared it for printing. The shoes mesh required a support structure to be printed, and while this would be possible with other kind of objects, accessing and removing the support structure from the inside of the mesh wouldn’t be possible. </p>
+
+<p><img src="/images/screenshot.jpg" alt="My helpful..screenshot" /></p>
+
+<p><img src="/images/screenshot 2.jpg" alt="My helpful..screenshot" /></p>
 
 <p>I scaled the object, because the size was bigger of the build plate. The process required a bit less than two hours to be completed, given I scaled the object down to few centimeters in order to reduce the printing time. The printed object shows a significant amount of artifacts due to some filament “skipping” problems during the process, maybe caused by the very small areas covered during each layer, but overall look was retained. I think that in fact these artifact add even more realism to the object. I think to use a green filament of PLA for this model. That’s the result:</p>
 
@@ -129,10 +132,7 @@ I moved the objects into the Cura software provided with the Kentstrapper and pr
 <img src="/images/print2.jpg" alt="My helpful..screenshot" />
 <img src="/images/print3.jpg" alt="My helpful..screenshot" /></p>
 
-<p>For the second object, the voronoy heel, I  printed with a Prusa and I selected a new filament: colorfab XT. It is a copolyester filament produced from Amphora 3D Polymer bt Eastman Chemical Company. This filament has features excellent properties : high strength and very high toughness, odor Neutral processing, High Tg / improved temp. resistance.
-That’s a very good result:</p>
-
-<p><img src="/images/taccovoronoi.jpg" alt="My helpful..screenshot" /></p>
+<p>For the second object, the voronoy heel, I  printed with a Prusa and I selected a new filament: colorfab XT. It is a copolyester filament produced from Amphora 3D Polymer bt Eastman Chemical Company. This filament has features excellent properties : high strength and very high toughness, odor Neutral processing, High Tg / improved temp. resistance.</p>
 
 <h1 id="d-scanning-objects">3-D scanning objects</h1>
 <p>For 3D scanning I approached the task using the Android version of 123D Catch application. I initially wanted to scan my red shoes. The 123D Catch application requires to take several pictures from every angle, and it guides the user by showing circles with a number of tabs corresponding to the different required angles, both at the same level of othe object and from a top-view. It does so using the built-in compass of the mobile phone.</p>
@@ -160,8 +160,6 @@ That’s a very good result:</p>
 <p>In order to validate the workflow I decided to print the two best models obtained from the scanning session, the shoes scanned in 123D Catch and the human model made with Skanect.</p>
 
 <p>The shoes model resulted not very perfect print. Even if it had a high resolution, the cropped model obtained from 123D Catch was not manifold, and required fixing using Meshlab to be printed. This probably altered significantly the shape, also making it skewed on one side.</p>
-
-<p><img src="/images/screenshot 2.jpg" alt="My helpful..screenshot" /></p>
 
 <p>The human model  was printed by a Prusa printer but the PLA it’s not very good quality and the print result with a lot of airbbubble.</p>
 
