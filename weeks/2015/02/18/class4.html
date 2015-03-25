@@ -1,10 +1,3 @@
-<<<<<<< HEAD
----
-layout: default
----
-
-<div class="home">
-=======
 <!DOCTYPE html>
 <html>
 
@@ -13,12 +6,11 @@ layout: default
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Francesca Mereu</title>
-  <meta name="description" content="This a FabAcademy 2015 website. There are all processes of my work, experiments,  prototypes..
-">
+  <title>electronics production (Feb 18)</title>
+  <meta name="description" content="This week assigment is related to producing printed circuit boards. In particular we were asked to mill, stuff and program the Fab ISP board, which allows to...">
 
   <link rel="stylesheet" href=" /css/main.css">
-  <link rel="canonical" href=" /">
+  <link rel="canonical" href=" /weeks/2015/02/18/class4.html">
   <link rel="alternate" type="application/rss+xml" title="Francesca Mereu" href=" /feed.xml" />
 </head>
 
@@ -70,23 +62,71 @@ layout: default
 
     <div class="page-content">
       <div class="wrapper">
-        <div class="home">
->>>>>>> afa629cb6beb961441aa76734804d92e598b530b
-	
- <img src="./images/foto-perf.jpg" alt="foto" style="height:90px;">	
-Since I was a kid I have always drawn on any surface, particulary on newspaper, because the paper was not white and clean..but full of letters printed. The same paper I reused for making  little small boats, hats and figures or prepare the sets for my toys..	
-<a href="about.htm"> more information</a>
+        <div class="post">
+
+  <header class="post-header"> 
+ 
+    <h1 class="post-title">electronics production (Feb 18)</h1>
+    <p class="post-meta">Feb 18, 2015</p>
+  </header>
+
+  <article class="post-content">
+    <p>This week assigment is related to producing printed circuit boards. In particular we were asked to mill, stuff and program the Fab ISP board, which allows to program brand new AVR microcontrollers with the desired firmware.</p>
+
+<h3 id="fab-isp">FAB ISP</h3>
+<p>The FAB ISP design we decided to build in the lab is the Andy’s version. This board’s design is particularly interesting because it replaces the standard USB connector with traces milled on the board. The only required addition is some spacer added on the bottom of the board in order to have the required tickness for it to properly fit into a normal PC USB slot.</p>
+
+<h3 id="milling-the-board">Milling the board</h3>
+<p>I milled the board starting from the PNG design available on the class webpage, using the Fab Modules on the lab’s Roland MDX-15 Modela mill present in the lab.</p>
+
+<p>For milling the traces I used the 1/64’’ inch bit, while for cutting out the board from the FR-1 sheet I used the 1/32’’ inch bits.
+The first milling experiments where not very successful as traces on the upper right corner of the board were not milled properly.</p>
+
+<p><img src="/images/modela2.jpg" alt="My helpful..screenshot" /></p>
+
+<p><img src="/images/modela4.jpg" alt="My helpful..screenshot" /></p>
+
+<p><img src="/images/modela5.jpg" alt="My helpful..screenshot" /></p>
+
+<h3 id="stuffing-the-fabisp">Stuffing the FabISP</h3>
+<p>Before starting the actual stuffing I used a bill of materials of my instructor advice, matching codes in the schematic with a description and quantity required for each part. This helped me a lot in collecting components from the lab inventory, and will also be useful to track which components are needed to make another similar board in the future.</p>
+
+<p><img src="/images/fabisp_bom.jpg" alt="My helpful..screenshot" /></p>
+
+<p><img src="/images/fabisp_tbr.jpg" alt="My helpful..screenshot" /></p>
+
+<p>I also managed to salvage the ISP connector from an old board, so I had all material ready.</p>
+
+<p><img src="/images/modela6.jpg" alt="My helpful..screenshot" /></p>
+
+<p><img src="/images/modela8.jpg" alt="My helpful..screenshot" /></p>
+
+<p>I had never soldered SMD components before, so found it quite intimidating handling such small parts.
+The process took me a couple of hours to complete, mostly because I couldn’t get some of the components to sit cleanly. Another lesson is I should use less solder possible before adding the components to get an easier alignment.</p>
+
+<p><img src="/images/modela9.jpg" alt="My helpful..screenshot" /></p>
+
+<p><img src="/images/modela10.jpg" alt="My helpful..screenshot" /></p>
+
+<p>By testing all the connections to the ATTiny pins I could be more confident while progressing, but later I realized that some of the could be redone in a much cleaner way.</p>
+
+<h3 id="programming-the-fabisp">Programming the FabISP</h3>
+
+<p>Being my first board I wasn’t really sure it would work at first. I downloaded the firmware plus all dependencies and followed the make clean, make program cycle using my instructor FabISP plugged on a second USB port. No error message, so I unsoldered the jumper but my board wouldn’t be recognized.</p>
+
+<p><img src="/images/modela11.jpg" alt="My helpful..screenshot" /></p>
+
+<p><img src="/images/modela12.jpg" alt="My helpful..screenshot" /></p>
+
+<p>After several tries,restoring the jumper, the process this time was successful, my ISP was recognized by OSX, and it also worked for programming one of my collegues board.</p>
+
+<p><img src="/images/Fabisp.jpg" alt="My helpful..screenshot" /></p>
 
 
-<img src="./images/heels-logo.jpg" alt="logo" style="height:90px;">	
-I.D HEELS is my final project of FabAcademy.
-Intelligent shoes are always been  in my dream!!   
-<a href="project.htm">more information</a>
+  </article>
 
-<<<<<<< HEAD
 </div>
-=======
-</div>
+
       </div>
     </div>
 
@@ -151,4 +191,3 @@ Intelligent shoes are always been  in my dream!!
   </body>
 
 </html>
->>>>>>> afa629cb6beb961441aa76734804d92e598b530b

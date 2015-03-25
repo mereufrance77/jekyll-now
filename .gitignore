@@ -1,2 +1,13 @@
 _site
+<<<<<<< HEAD
 .sass-cache
+=======
+.DS_Store
+.jekyll
+.bundle
+.sass-cache
+Gemfile
+Gemfile.lock
+node_modules
+package.json
+>>>>>>> afa629cb6beb961441aa76734804d92e598b530b
