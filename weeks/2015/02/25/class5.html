@@ -85,18 +85,24 @@
 
 <p>In Meshlab the process can be summarised as follows:</p>
 
-<p>1.Open the starting STL in Meshlab <br />
-2.Reconstruct the mesh surface using VCG Reconstruction algorithm. This produces an appropriate mesh from the original one, also giving the opportuinity to reduce or increase the number of faces depending on the quality of the starting mesh.<br /></p>
+<ul>
+  <li>Open the starting STL in Meshlab <br /></li>
+  <li>Reconstruct the mesh surface using VCG Reconstruction algorithm. This produces an appropriate mesh from the original one, also giving the opportuinity to reduce or increase the number of faces depending on the quality of the starting mesh.<br /></li>
+</ul>
 
 <p><img src="/images/1mesh.jpg" alt="My helpful..screenshot" /></p>
 
-<p>3.Further smooth the surface using Laplacian Smooth .<br /></p>
+<ul>
+  <li>Further smooth the surface using Laplacian Smooth .<br /></li>
+</ul>
 
 <p>4.Sample the mesh, using the Poisson method, in order to identify the points which will be designated as the lattice points for the Voronoi tesselation.<br /></p>
 
 <p><img src="/images/2mesh.jpg" alt="My helpful..screenshot" /></p>
 
-<p>5.Apply the Voronoi Vertex coloring algorithm to the reconstructed mesh.<br /></p>
+<ul>
+  <li>Apply the Voronoi Vertex coloring algorithm to the reconstructed mesh.<br /></li>
+</ul>
 
 <p><img src="/images/3mesh.jpg" alt="My helpful..screenshot" /></p>
 
@@ -104,9 +110,14 @@
 
 <p><img src="/images/6mesh.jpg" alt="My helpful..screenshot" /></p>
 
-<p>7.Further smooth the resulting wireframe, using the Taubin algorithm <br /></p>
-
-<p>8.Finally with the Uniform Mesh Resampling function you can add depth to the wireframe. This command creates a resampled mesh offsetting all the voxels in the original mesh by a given distance, then applying the Marching cubes algorithm to the resulting volume.<br /></p>
+<ul>
+  <li>
+    <p>Further smooth the resulting wireframe, using the Taubin algorithm <br /></p>
+  </li>
+  <li>
+    <p>Finally with the Uniform Mesh Resampling function you can add depth to the wireframe. This command creates a resampled mesh offsetting all the voxels in the original mesh by a given distance, then applying the Marching cubes algorithm to the resulting volume.<br /></p>
+  </li>
+</ul>
 
 <p><img src="/images/7mesh.jpg" alt="My helpful..screenshot" /></p>
 
