@@ -1,0 +1,13 @@
+---
+layout: post
+title:  "input device (Apr 8)"
+date:   2015-04-08 11:09:52
+categories: weeks
+---
+That's a first conceptual sketch
+
+
+ 
+ 
+
+
