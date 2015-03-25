@@ -5,10 +5,8 @@ description: > # this means to ignore newlines until "baseurl:"
   This a FabAcademy 2015 website. There are all processes of my work, experiments, 
   prototypes..
  
-baseurl: ""  
-url: "http://127.0.0.1:4000" # the base hostname & protocol for your site
-
-
+baseurl: " " #the subpath of your site 
+url: "" # the base hostname & protocol for your site
 twitter_username: M-Artech
 github_username:  mereufrance77
 

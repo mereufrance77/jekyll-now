@@ -4,10 +4,76 @@ title:  "electronics design (Mar 4)"
 date:   2015-03-04 15:09:52
 categories: weeks
 ---
-That's a first conceptual sketch bbbbbbb
+The assignment for this week is to produce the Hello World board, adding at least a button and an LED to the original design, using some of the proposed software. Furthermore we should investigate the tools needed to simulate electronic designs.
 
 
+#Hello World board
+I'm a designer and visual artist and I don't have many experience with electronic design, so in order to experiment with this theme I started with the goal of creating a basic " Hello World" board adding a led and a button.
+
+Hello World board uses ATTiny44 as microconrtroller. ATtiny  is produced by Atmel Corporation. Atmel The smallest in their AVR family of microcontrollers are the ATtiny series (8-bit core and fewer features, fewer I/O pins, and less memory than other AVR series, all of them are available in through-hole package).The AVR is a modified Harvard architecture 8-bit RISC single-chip microcontroller, which was developed by Atmel in 1996. The AVR was one of the first microcontroller families to use on-chip flash memory for program storage, as opposed to one-time programmable ROM, EPROM, or EEPROM used by other microcontrollers at the time.
  
+First I spent some time on the ATTiny44 datasheet in order to have a clear idea of its pinout.
+I attached a link for this: <(http://www.atmel.com/Images/doc8006.pdf)>
+
+
+#Electronig design with Eagle cad software
+Getting back to the board, I started to model the schematics in Eagle, a software for designing prined circuit boards, and produced my first design, including a leds and the required resistors, plus a button. 
+This was the first time that I design a board circuit so as first step I downloaded the software and the libraries of fablab and Sparkfun.
+EAGLE contains a schematic editor, for designing circuit diagrams. Parts can be placed on many sheets and connected together through ports.
+These are the initial design for the "helloboard". Can you see some problems with the wire line near the ftdi element. It wasn't good. I tried to change the line with the comand "miter". 
+
+![My helpful..screenshot](/images/etching.jpg)
+
+![My helpful..screenshot](/images/etching1.jpg)
+
+In order to complete the HelloEcho design in Eagle, I also used this time the network naming functionality, achieving a tidy look for the schematics.This is  the final schematic board:
+
+![My helpful..screenshot](/images/helloschematic.jpg)
+
+This is the final design board,with the layer's element and the clean image, that I exported on .PNG monochrome with a resolution of 500 px  for the milling machine.
+
+![My helpful..screenshot](/images/helloworldfinal.jpg)
+
+![My helpful..screenshot](/images/helloworldred.jpg)
+
+
+#Milling and stuffing the board
+For milling the board I used the FabModules on Roland Modela MDX 15, site in FabLab Cascina.
+This is the loaded image board:
+
+
+![My helpful..screenshot](/images/milltrace.jpg)
+
+I was setting the parameters to milling:
+milltrace: 1/64;<br />
+cut: 1/32;<br />
+
+![My helpful..screenshot](/images/fabmod.jpg)
+
+![My helpful..screenshot](/images/millboard.jpg)
+
+I didn't many experience in soldering, so It was very difficult for me, but finally I stuff all the elements with the help of my instructor . That's the final board.
+
+![My helpful..screenshot](/images/stuff2.jpg)
+
+#Testing the design
+ The first test
+![My helpful..screenshot](/images/test2.jpg)
+
+As suggested during the class, I investigated the options for testing the circuit before building it. I knowed 123d Circuit App
+
+
+
+#Update on 21 March
+Since the first example board was not compliant with the Hello World board design, I decided to try another design. This time,  I decided to have a more traditional square board, but to add six leds and a button instead.
+
+The 123D Circuits app is really simple to use, and simulator itself is very nice showing the actual board working with LEDs lighting. 
+
+Sketching the schematic I quickly found out that the avaiable pins, after adding the headers and button were only three. In order to support more LEDS I knew I could use a technique called CharliePlexing, which I heard about in the past but didn't have yet the opportunity to try in one of my designs.
+
+#Conclusions
+# Source Files
+
  
 
 
