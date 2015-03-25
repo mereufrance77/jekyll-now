@@ -8,6 +8,8 @@ This week assignment is about making something big, bigger than a chair. For thi
 But finally I decided to make a furniture for the FabLab Cascina: a Fab-BAR!
 
 #Designing the Fab-BAR
+It was the first design of a furniture, so I think to use a template of Sketchup for carpentry.
+The problem of the new version of Sketchp was to export in .dxf files, because with this version is not  easily. I had to download a plug-in.
 
 ![My helpful..screenshot](/images/fabBAR2.jpg)
 
