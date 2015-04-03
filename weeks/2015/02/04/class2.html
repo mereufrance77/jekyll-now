@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>computer-aided design (Feb 4)</title>
-  <meta name="description" content="This week, we were to draw, render, animate, simulate the possible final project. For my work I used three of the  2-D, 3-D softwares in the list.">
+  <meta name="description" content="During this week we are asked to explore the different software packages presented for 2D and 3D modeling. These should be used to create sketches for our fi...">
 
   <link rel="stylesheet" href=" /css/main.css">
   <link rel="canonical" href=" /weeks/2015/02/04/class2.html">
@@ -69,25 +69,46 @@
   </header>
 
   <article class="post-content">
-    <p>This week, we were to draw, render, animate, simulate the possible final project. 
-For my work I used three of the  2-D, 3-D softwares in the list.</p>
+    <p>During this week we are asked to explore the different software packages presented for 2D and 3D modeling. These should be used to create sketches for our final project.</p>
 
-<h2 id="drawing-the-heels">Drawing the heels</h2>
+<p>I used several of the proposed packages with the objective of creating the model of my digital high heel.</p>
 
-<p>I prefered to use Sketchup Make to build a  heel’s mechanism that’s possible to print easily
-<img src="/images/schema scarpa2.jpg" alt="My helpful..screenshot" /></p>
+<h1 id="d-sketching-and-drawing">2D sketching and drawing</h1>
 
-<p>I tried Antimony to design the heel. It’s good for parametric heel, it’s possible to change the height and modify  his form.</p>
+<p>During the previous week I had already sketched using a simple pencil and then I redraw with the 2d software, as Illustrator.</p>
 
-<p><img src="/images/aTacco1.jpg" alt="My helpful..screenshot" /> 
-There are some variations of the heel’s form:
+<p><img src="/images/scarpa1.jpg" alt="My helpful..screenshot" /></p>
+
+<p>During the previous week I had already sketched using a pen-drawing tool.  Penultimate some basic concept art. While this is far from realistic it gives an idea of the features I would like to have implemented. And the tool itself makes a great replacement for a paper notebook when doing concept art.</p>
+
+<p>I then used Inkscape to create a vector drawing of it, which can be used for the user manual to illustrate the different features. It turned out that a simplification of this works also great as a logo of my project.</p>
+
+<h1 id="d-modelling">3D Modelling</h1>
+
+<p>Google SketchUp can be used in different stages of the design process but particularly in the early stage of the design process, because of the easy layout. The program is more, like the name describes, a sketch program than a real 3D CAD engineering modelling program for e.g. technical drawings and complicated assemblies. Google SketchUp allows users to “play” around with their designs which are difficult in 3D CAD programs</p>
+
+<p><img src="/images/scarpa2.jpg" alt="My helpful..screenshot" />
+<img src="/images/scarpa3.jpg" alt="My helpful..screenshot" /></p>
+
+<h1 id="parametric-modeling">Parametric modeling</h1>
+<p>The software packages I tried for creating a configurable version of the digital heels were Antimony and Grasshopper.</p>
+
+<p>Antimony, even if I have years of experience in Python programming, proved to be quite a challenge when doing 3D modeling of my concept. I understand the power of the provided API but got frustrated by the lack of ready to use shapes apart the basic ones. One severe limitation in my opinion is the lack of an API for creating meshes out of polygons or triangles. I understand this is probably due to the more 2D inclination of the software, but this got me to move on to a different tool for this task. But I plan to get back for a second test for the CNC projects.</p>
+
+<p>I tried Antimony to design the heel. It’s good for parametric heel, it’s possible to change the height and modify his form.</p>
+
+<p><img src="/images/aTacco1.jpg" alt="My helpful..screenshot" /> </p>
+
+<p>There are some variations of the heel’s form:
 I used a “twist”, modifier with three sizes: 90° -60-25 degrees, </p>
 
 <p><img src="/images/tacco-rot.jpg" alt="My helpful..screenshot" /></p>
 
-<p>And finally I thinked to model my 3d shoes with Blender:</p>
+<p>I managed then to build a parametric version of my concept using Grasshopper. It is a software very good for designers who are exploring new shapes using generative algorithms, Grasshopper® is a graphical algorithm editor tightly integrated with Rhino’s 3-D modeling tools. Unlike RhinoScript, Grasshopper requires no knowledge of programming or scripting, but still allows designers to build form generators from the simple to the awe-inspiring.</p>
 
-<h2 id="source-files">Source Files</h2>
+<p>I used only one extra function from the MCad add-on library to make rounded cubes, relying on the core language for the rest and found it quite intuitive. Being able to build shapes using triangles was a real plus. Using variables for most values I thought could be changed, and trying to compute the others in relation to those made it easy to create a parametric model. I must admit that the experience in creating resolution independent GUI helped a lot in this process.</p>
+
+<h1 id="source-files">Source Files</h1>
 
 <p><a href="/files/week02/disegno scarpa.skp.zip">heel-sketchup File</a>
 <a href="/files/week02/heel1.sb">heel-antimony File</a></p>
