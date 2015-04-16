@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>embedded programming (Mar 11)</title>
-  <meta name="description" content="This week assigment is to study the ATTiny datasheet, and to program it in as many languages as possible.">
+  <title>output devices (Apr 15)</title>
+  <meta name="description" content="This week challenge is to create and program a board that measures something. I was intrigued by the step response sensors, as they are really general purpos...">
 
   <link rel="stylesheet" href=" /css/main.css">
-  <link rel="canonical" href=" /weeks/2015/03/11/class7.html">
+  <link rel="canonical" href=" /weeks/2015/04/15/class11.html">
   <link rel="alternate" type="application/rss+xml" title="Francesca Mereu" href=" /feed.xml" />
 </head>
 
@@ -64,98 +64,30 @@
 
   <header class="post-header"> 
  
-    <h1 class="post-title">embedded programming (Mar 11)</h1>
-    <p class="post-meta">Mar 11, 2015</p>
+    <h1 class="post-title">output devices (Apr 15)</h1>
+    <p class="post-meta">Apr 15, 2015</p>
   </header>
 
   <article class="post-content">
-    <p>This week assigment is to study the ATTiny datasheet, and to program it in as many languages as possible.</p>
+    <p>This week challenge is to create and program a board that measures something. I was intrigued by the step response sensors, as they are really general purpose and allow to measure a lot of different things.</p>
 
-<h1 id="memory-programming">Memory programming</h1>
+<p>For my final project I will also need to measure the flex of the foot,  and this can be done using the step-response mechanism. </p>
 
-<p>Programming the AVR device involves setting the lock bits, setting the fuse bytes, programming the
-Flash, and programming the internal EEPROM. This data can also be read back from the controller
-along with signature bytes for identification of the device. Tiny devices can be programmed using
-serial programming or high-voltage parallel programming.
-In-system programming uses the AVR internal serial peripheral interface (SPI) to download code
-into the Flash and EEPROM memory segments of the AVR. It also programs the lock bits and fuse
-bytes. ISP programming requires only VCC, GND, RESET, and three signal lines for programming.</p>
+<h1 id="led-array">Led Array</h1>
+<p>A simple flex sensor 2.2” in length. As the sensor is flexed, the resistance across the sensor increases. The resistance of the flex sensor changes when the metal pads are on the outside of the bend (text on inside of bend).</p>
 
-<p>The following illustration shows the signals for ISP serial programming.</p>
+<p><img src="/images/flex-sensor.jpeg" alt="My helpful..screenshot" /></p>
 
-<p><img src="/images/tiny.jpg" alt="My helpful..screenshot" /></p>
+<h1 id="wearable-light">wearable light</h1>
+<p><img src="/images/FLEXINO.jpg" alt="My helpful..screenshot" /></p>
 
-<h1 id="programming-c">Programming C</h1>
-<p>C is a high-level programming language, and code written in C language has to be converted
-into machine language that your target controller understands and can execute. The tool that does
-this conversion is called a compiler. The Tiny controllers understand only binary format and have
-to be fed in bytes. A common way of storing a collection of bytes to be transferred to the
-controller is to use a hex file that contains the bytes in the form of hexadecimal notation. So there
-must be a tool that can convert C code into the hex file.</p>
+<p>#</p>
 
-<p>The first step was seeing the schematic style of  my Hello-echo board.  It was very simple :there are one LED and one switch in the circuit along with a reset switch. The aim of the project is to toggle the state of the LED each time the corresponding switch is pressed and released.</p>
-
-<p>In the alternate style of drawing a schematic as below, the signals are assigned signal names, such as PB2, which happens to be pin 6 of the microcontroller. Pin 6 is supposed to connect to LED1. So, signal name PB2 is assigned to pin 6 as well as to the cathode of LED1. Similar signal names are used for the rest of the connections.</p>
-
-<p><img src="/images/helloboard-sch.jpg" alt="My helpful..screenshot" /></p>
-
-<p>The blinking was achieved with the code below, replacing the main() code into the hello.arduino.328P.blink.make and merging it with hello.button.45.make by Neil:</p>
-
-<pre><code>#include &lt;avr/io.h&gt;
-#include &lt;util/delay.h&gt;
-#define input(directions, pin) (directions &amp;= (~pin))
-#define output(directions,pin) (directions |= pin) // set port direction for output
-#define set(port,pin) (port |= pin) // set port pin
-#define clear(port,pin) (port &amp;= (~pin)) // clear port pin
-#define pin_test(pins,pin) (pins &amp; pin) // test for port pin
-#define bit_test(byte,bit) (byte &amp; (1 &lt;&lt; bit)) // test for bit set
-#define led_delay() _delay_ms(200) // LED delay
-
-#define led_port PORTA
-#define led_direction DDRA
-#define led_pin (1 &lt;&lt; PA7)
-#define button_port PORTB
-#define button_direction DDRB
-#define button_pin (1 &lt;&lt; PB2)
-#define button_pins PINB
-
-int main(void) {
-   //
-   // main
-   //
-   // set clock divider to /1
-   //
-   CLKPR = (1 &lt;&lt; CLKPCE);
-   CLKPR = (0 &lt;&lt; CLKPS3) | (0 &lt;&lt; CLKPS2) | (0 &lt;&lt; CLKPS1) | (0 &lt;&lt; CLKPS0);
-   //
-   // initialize LED pin
-   //
-   clear(led_port, led_pin);
-   output(led_direction, led_pin);
-   set(button_port, button_pin);
-   input(button_direction, button_pin);
-   
-   //
-   // main loop
-   //
-   while (1) {
-	   if (pin_test(button_pins,button_pin)==0){
-      	 	set(led_port, led_pin);
-      		led_delay();
-		    clear(led_port, led_pin);
-    	  	led_delay();
-		  }
-   }
-}
-</code></pre>
-
-<p>In order to complile it, I need to download and install CROSSPACK. Crosspack Development is a development enviroment for Atmel AVR’s microcontrollers running on Apple’s Mac OSX, simil to AVR Studio on Windows. It consists of the GNU compiler suite, a C library for AVR, the AVERDUDE   downloader and several other useful tools.</p>
-
-<p><img src="/images/butt.jpg" alt="My helpful..screenshot" /></p>
-
-<h1 id="source-files">Source Files</h1>
-
-<p><a href="/files/week07/blink.c">Blink</a></p>
+<h2 id="source-files">Source Files</h2>
+<p><a href="/files/week10/flexino-etching.png">flexino Board</a>
+<a href="/files/week10/flexino-cutting.png">flexino Board</a>
+<a href="/files/week10/flexsensor.ino"> code </a>
+<a href="/files/week10/flexsensor.ino">flexino code</a></p>
 
 
   </article>
