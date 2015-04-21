@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>output devices (Apr 15)</title>
-  <meta name="description" content="This week challenge is to create and program a board that measures something. I was intrigued by the step response sensors, as they are really general purpos...">
+  <meta name="description" content="The assignment for this week was to add a output device to a microcontroller board I have already designed, and program it to do something. ">
 
   <link rel="stylesheet" href=" /css/main.css">
   <link rel="canonical" href=" /weeks/2015/04/15/class11.html">
@@ -69,25 +69,26 @@
   </header>
 
   <article class="post-content">
-    <p>This week challenge is to create and program a board that measures something. I was intrigued by the step response sensors, as they are really general purpose and allow to measure a lot of different things.</p>
+    <p>The assignment for this week was to add a output device to a microcontroller board I have already designed, and program it to do something. </p>
 
-<p>For my final project I will also need to measure the flex of the foot,  and this can be done using the step-response mechanism. </p>
+<p>As my interests are about wearable electronics, I wanted to investigate something with it and to advance some of my project design.</p>
 
 <h1 id="led-array">Led Array</h1>
-<p>A simple flex sensor 2.2” in length. As the sensor is flexed, the resistance across the sensor increases. The resistance of the flex sensor changes when the metal pads are on the outside of the bend (text on inside of bend).</p>
 
-<p><img src="/images/flex-sensor.jpeg" alt="My helpful..screenshot" /></p>
+<p>I used the technique of CharliePlexing to make a led array using few pins. This technique  in few words allows to control up to n*(n-1) leds with n pins. When using more than 2 pins it does so by switching one of the pins as input rather than output, thus disconnecting the pin from the circuit.</p>
 
 <h1 id="wearable-light">wearable light</h1>
-<p><img src="/images/FLEXINO.jpg" alt="My helpful..screenshot" /></p>
 
 <p>#</p>
 
 <h2 id="source-files">Source Files</h2>
-<p><a href="/files/week10/flexino-etching.png">flexino Board</a>
-<a href="/files/week10/flexino-cutting.png">flexino Board</a>
-<a href="/files/week10/flexsensor.ino"> code </a>
-<a href="/files/week10/flexsensor.ino">flexino code</a></p>
+<p><a href="/files/week11/ledy-etching.png">Ledy Board</a><br /></p>
+
+<p><a href="/files/week11/ledy-cutting.png">Ledy Board</a><br /></p>
+
+<p><a href="/files/week11/ledy.ino"> code </a><br /></p>
+
+<p><a href="/files/week11/ledy.ino">ledy code</a><br /></p>
 
 
   </article>
