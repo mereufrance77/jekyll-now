@@ -46,8 +46,6 @@
           
         
           
-        
-          
           <a class="page-link" href=" /project/">Project</a>
           
         
@@ -77,56 +75,145 @@
   <li><a href="#development-log">Development Log</a></li>
 </ul>
 
-<p><img src="/images/heels-logo.jpg" alt="My helpful..screenshot" /></p>
+<p>The final project consist of what we learn over the course of the semester. My final project would cover</p>
+
+<ul>
+  <li>Laser cutting <br /></li>
+  <li>3d scanning and printing <br /></li>
+  <li>molding and casting   <br /></li>
+  <li>Input &amp; output device  <br /></li>
+  <li>Interface and application programming   <br /></li>
+  <li>Embedded Programming     <br /></li>
+  <li>Electronic Design     <br /></li>
+  <li>Computer Aided Design    <br /></li>
+</ul>
 
 <h1 id="description">Description:</h1>
+
 <p>INTELLIGENT DESIGN HEELS is a women’s shoes that react to wellness parameters of the feet, like pressure, to change the height of the heels.
 Also it reacts to a temperature to modify a cover skin.
 The  contemporary reality is changing fast and probably we doing different things at the same times  is more difficult that changing planes in the same day.
-I.D. heels is for a dynamic and contemporary women,who adapts to all situations of the day and is able to bind the comfort of the shoe to the fashionable technology.
-The questions are:
+I.D. heels is for a dynamic and contemporary women,who adapts to all situations of the day and is able to bind the comfort of the shoe to the fashionable technology.</p>
+
+<p>The questions are:
 Is possible linking  the comfort of the feet  with the good design of the shoes?
 What can you change on these shoes?
 You can change  heels in base your pressure
-You can change the skin of your shoes in base your temperature
-You can use accessorizes of the shoes  as necklace or bracelet</p>
-
-<h1 id="references">References:</h1>
-<p>There are reference models on the market of design , launched by fashion houses quite famous, like Dior and other types that use 3D printing for individual pieces or the whole shoe
-<img src="/images/dior1.jpg" alt="My helpful..screenshot" />;
-<img src="/images/dior2.jpg" alt="My helpful..screenshot" /></p>
-
-<h3 id="how-is-possible-to-modify-the-shoes">How is possible to modify the shoes?</h3>
+You can change the skin of your shoes in base your temperature</p>
 
 <p>There are twoo changes that you can do:<br />
 1. modify the heel, on the basis of ‘analysis of foot pressure, or a baropodometric analysis;
 changing the color of your skin texture based on temperature;<br />
-2. change the cover skin in two ways; One way is to use a fabric printed with thermochromic ink, wich then reacts to the temperature change of foot and change the deign of texture.Another way is re-using plastic decoration on the top,like  3d printing accessorizes that you can attach on the top. </p>
+2. change the cover skin in two ways; One way is to use a fabric printed with thermochromic ink, wich then reacts to the temperature change of foot and change the deign of texture.Another way is re-using plastic decoration on the top,like  3d printing accessorizes that you can attach on the top.</p>
 
-<p>The resolution of the project has been thought and developed in the following phases:<br />
-1.	Research materials  and study the mechanimis to move the heel.<br />
-2.	Scan the foot and prepare a 3d modelling.<br />
-3.	Design of the mechanism that allows to move the heels. <br />
-4.	Prepare the pieces that will conform the mechanism of the project<br />
-5.	Prepare all the necessary programming for the project: sensor and engine rotate limitation.<br />
-6.	Finish building all the electronics and necessary parts to accomplish the Final Project.</p>
+<h1 id="technical-considerations">Technical considerations</h1>
+
+<p>The I.D HEELS won’t host any intelligence on itself. It will only provide the means to acquire inputs and provide outputs.
+It will do so using a custom micro-controller board, also contained into the wearable element. This decision was taken to maintain the design simpler, and more importantly reusable independently from the availability of new technologies on the interaction side.</p>
+
+<h1 id="technical-specifications">Technical specifications</h1>
+
+<p>The Intelligent Heel will contain the following electronic components:
+	•	custom micro-controller board (ATtiny45)
+	•	pressure sensor
+	•	temperature sensor
+	•	power supply
+	•	wifii module
+	•	conductive fabrics
+	•	RGB leds </p>
+
+<h3 id="schedule-project">Schedule project</h3>
+
+<p>The resolution of the project has been thought and developed in the following phases:<br /></p>
+
+<ol>
+  <li>
+    <p>Scan the foot and prepare a 3d model.<br /></p>
+  </li>
+  <li>
+    <p>Design of sole to prepare the mold to set the electronics. <br /></p>
+  </li>
+  <li>
+    <p>Make the sensor and testing it with the board <br /></p>
+  </li>
+  <li>
+    <p>Print  a high heel model to test the sole .<br /></p>
+  </li>
+  <li>
+    <p>Programming the application web to test the sole.</p>
+  </li>
+</ol>
 
 <h3 id="development-log">Development log</h3>
-<p>The fisrt step  is developing the idea by sketching  on paper, naturally
+<p>## first sketches
+The fisrt step  is developing the idea by sketching  on paper, naturally
 I attached some sketches here:</p>
 
 <p><img src="/images/sketch1.jpg" alt="My helpful..screenshot" />
 <img src="/images/sketch2.jpg" alt="My helpful..screenshot" /></p>
 
-<p>I must to resolve the problem of the mechanical movement of the heel:
+<p>I thinked solving the change of the heel by a mechanism that use a motor dc  with 3d printing parts
 That are any sketches:</p>
 
 <p><img src="/images/strutscarpa.jpg" alt="My helpful..screenshot" />
 <img src="/images/tacco.jpg" alt="My helpful..screenshot" /></p>
 
-<h3 id="technical-considerations">Technical considerations</h3>
-<p>### Technical specifications
-### Schedule Project</p>
+<h2 id="cutting-and-molding-the-sole">cutting and molding the sole</h2>
+
+<p><img src="/images/disegno.jpg" alt="My helpful..screenshot" /></p>
+
+<p><img src="/images/laserinsole.jpg" alt="My helpful..screenshot" /></p>
+
+<p><img src="/images/mold-insole.jpg" alt="My helpful..screenshot" /></p>
+
+<p><img src="/images/insole3.jpg" alt="My helpful..screenshot" /></p>
+
+<p><img src="/images/insole4.jpg" alt="My helpful..screenshot" /></p>
+
+<h2 id="making-the-analog-textile-pressure-sensor">making the analog textile pressure sensor</h2>
+<p>I used Velostat/Linqstat (Carbon impregnated Polyethylene film ) and a conductive fabric to make an analog pressure sensor. The Analog textile pressbutton is a analog textile sensor that change his resistivity if you make pressure on it. It is useful for creating variable voltage divider that can be easily read by an Arduino.
+This analog press button works with resistive principle. It has a very high resistivity when not pressed, but its resistance goes down as soon as you press it. It works as a bend sensor as well.
+By connecting more sensors together it is possible to make a matrix analog switch.
+Sensitive area 40mm x 40mm (1.57”x1.57”)</p>
+
+<p><img src="/images/textile.jpg" alt="My helpful..screenshot" /></p>
+
+<p><img src="/images/cutevelostad.jpg" alt="My helpful..screenshot" /></p>
+
+<p><img src="/images/insole5.jpg" alt="My helpful..screenshot" /></p>
+
+<p><img src="/images/insole-pressure.png" alt="My helpful..screenshot" /></p>
+
+<h2 id="testing-the-sensor">testing the sensor</h2>
+
+<p>First I tested the sensor with lilypad arduino, then i tested it with my board.
+There’s the code that I used:</p>
+
+<p>Int SensorPin = a5;    // Select the Input pin for the Sensor
+Int LedPin = 13;      // Select the pin for the LED
+Int SensorValue = 0;  // Variable to Store the Value Coming from the Sensor</p>
+
+<p>Void Setup() {
+  // Declare the LedPin as an OUTPUT:
+  PinMode(LedPin, OUTPUT);
+}</p>
+
+<p>Void Loop() {
+  // Read the Value from the Sensor:
+  SensorValue = AnalogRead(SensorPin);
+  // Turn the LedPin On
+  DigitalWrite(LedPin, HIGH);
+  // Stop the Program for <sensorvalue> Milliseconds:
+  Delay(SensorValue);
+  // Turn the LedPin Off:
+  DigitalWrite(LedPin, LOW);
+  // Stop the Program for for <sensorvalue> Milliseconds:
+  Delay(SensorValue);
+}</sensorvalue></sensorvalue></p>
+
+<h2 id="making-the-board-19-may">making the board (19 may)</h2>
+<p>## making an application (21-22 may)
+## printing a 3d model for test (27-28 may)</p>
 
 
   </article>
