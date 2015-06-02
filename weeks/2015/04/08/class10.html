@@ -152,48 +152,51 @@ void loop()
   <li>
     <p>In the first part, Processing tooks the data from Arduino opening the port:<br /> </p>
 
-    <p>import processing.serial.*;</p>
+    <pre><code> import processing.serial.*;
 
-    <p>Serial myPort; // The serial port is opened</p>
+ Serial myPort; // The serial port is opened
+</code></pre>
   </li>
   <li>
-    <p>In the second part, we set our CANVAS where the data is going to be visualized. All the code contained in a VOID SETUP is going to be fixed and will not vary all along the code:<br /> </p>
+    <p>In the second part, we set our CANVAS where the data is going to be visualized. All the code contained in a VOID SETUP is going to be fixed and will not vary all along the code: <br /> </p>
 
-    <p>void setup () {
- size(800, 800); // window size</p>
+    <pre><code> void setup () {
+ size(800, 800); // window size
 
-    <p>// List all the available serial ports
- println(Serial.list());</p>
+ // List all the available serial ports
+ println(Serial.list());
 
-    <p>String portName = Serial.list()[0];
- myPort = new Serial(this, portName, 9600);</p>
+ String portName = Serial.list()[0];
+ myPort = new Serial(this, portName, 9600);
 
-    <p>background(10,4,64);</p>
+ background(10,4,64);
 
-    <p>}</p>
+ }
+</code></pre>
   </li>
   <li>
     <p>In the thir part, we set the settings and parameters to visualize the data. In my case it will be a circle that varies its diameter in relation of the intensity of flex from the flexsensor. I remapped the data collected from Arduino into a maximum and minimum in order to fit always the circle in the size of my canvas. All the code contained in VOID DRAW and in VOID SERIALEVENT will be changing constantly:<br /> </p>
 
-    <p>void draw () {
- }</p>
+    <pre><code> void draw () {
+ }
 
-    <p>void serialEvent (Serial myPort) {
+ void serialEvent (Serial myPort) {
  int inByte = myPort.read();
- println(inByte);</p>
+ println(inByte);
 
-    <p>float yPos = height - inByte;</p>
+ float yPos = height - inByte;
 
-    <p>float map = map(inByte,37,200,10,width-200);</p>
+ float map = map(inByte,37,200,10,width-200);
 
-    <p>noFill();
+ noFill();
  stroke(255);
  strokeWeight(5);
- ellipse(width/2,width/2,map,map);</p>
+ ellipse(width/2,width/2,map,map);
 
-    <p>background(10,4,64);</p>
+ background(10,4,64);
 
-    <p>}</p>
+ }
+</code></pre>
   </li>
 </ol>
 
