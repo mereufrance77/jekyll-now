@@ -100,7 +100,7 @@ interact through sound (optional)
 <h2 id="whos-done-what-beforehand">Who’s done what beforehand?</h2>
 <p>I found a lot of commercial project about smart insole that also implement electronic interactions and web application too. All projects references to a tipology of shoes like sneakers and not for high heel. </p>
 
-<p>There’s a kikstarter project: “Digitsole” , Digitsole is a connected insole on the market controlled via your smartphone - warm your feet, track your distance and calories (https://www.kickstarter.com/projects/1308642275/digitsole-the-first-interactive-insole-to-heat-you)
+<p>There’s a kickstarter project: “Digitsole” , Digitsole is a connected insole on the market controlled via your smartphone - warm your feet, track your distance and calories (https://www.kickstarter.com/projects/1308642275/digitsole-the-first-interactive-insole-to-heat-you)
 Thermacell is a battery-powered heated insoles (http://www.mackspw.com/Item–i-THRHS1S)
 Another project was developed by the Utah University : Rapid Rehab system, will eventually help correct walking problems for people with artificial legs, hip replacements and broken legs.</p>
 
@@ -108,35 +108,36 @@ Another project was developed by the Utah University : Rapid Rehab system, will 
 
 <pre><code>silicon for the insole
 wood panel for the mold
-plastic filament and/resin for the shoe test (extra-insole)
+plastic filament and/ or resin for the case of the bluetooth module
+plastic filament and/or wood for the shoe that content the insole
 </code></pre>
 
 <p>Electronic, most important components:</p>
 
-<pre><code>ATtiny45
+<pre><code>ATtiny44
 analog pressure sensor textile kit (velostat and conductive fabric)
-wifii module
-8Ohm Speaker (optional)
+bluetooth module
+leds pendant (custom leds board) 
 and then: resistors, capacitors, connectors.
 </code></pre>
 
 <h2 id="where-will-they-come-from">Where will they come from?</h2>
-<p>The heart of the sensor is the textile sensor, that is composed from two parts: velostat and conductive fabric, These materials come from Plug and wear, a company expertise in textile and textile machinery and now in electronic textile.All products are designed and manifactured in Florence(Italy). About the electronics most of the device are available at FabLab and I got the rest from online shopping.</p>
+<p>The heart of the sensor is the custom textile sensor, that is composed from two parts: velostat and conductive fabric. Velostat is a piezoresistive material. These materials come from Plug and wear, a company expertise in textile and textile machinery and actually in electronic textile. All products are designed and manifactured in Florence(Italy). About the electronics most of the device are available at FabLab and I got the rest from online shopping.</p>
 
 <h2 id="how-much-will-it-cost">How much will it cost?</h2>
-<p>The most expensive part is the silicon (about 20-30 euro) and about another 8 euro for a wood panel. Between the electronic components the less chipper is the press sensor textile kit about 12 euro. I think another 10 euro to produce the board with ehe wifii module.   it’s not easy to evaluate the real cost, but I think that his total cost is about 50 euro.</p>
+<p>The most expensive part is the silicon (about 20-30 euro) and about another 8 euro for a wood panel. Between the electronic components the less chipper is the press sensor textile kit about 12 euro. I think another 10 euro to produce the board with the bluetooth module (hc5-05). It’s not easy to evaluate the real cost, but I think that his total cost is about 50 euro.</p>
 
 <h2 id="what-parts-and-systems-will-be-made">What parts and systems will be made?</h2>
-<p>I’m going to make the mold of the insole with the pressure sensor inside. I ‘ll design the board with the wifii module to receive the sensor data in real time.  This board ‘ll be werable  and content in a 3d printed case with a special clip to connect to the shoe.To visualize de data I thinked to write an application web.  </p>
+<p>I’m going to make the mold of the insole with the pressure sensor inside. I ‘ll design the board with the bluetooth module to receive the sensor data in real time.  This board ‘ll be wearable and content in a 3d printed case with a special clip to connect to the shoe.To visualize the data I thinked to write a web application .  </p>
 
-<pre><code>smart insole
+<pre><code>smart insole + shoe case
 wearable board + case
 web application
-speaker(last step)
+led pendant 
 </code></pre>
 
 <h2 id="what-processes-will-be-used">What processes will be used?</h2>
-<p>For the sole parts and shoes:</p>
+<p>For the sole parts and shoes(optional):</p>
 
 <pre><code>3d scanning 
 computer controlled cutting
