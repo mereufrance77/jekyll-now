@@ -7,10 +7,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Project development </title>
-  <meta name="description" content="Development log">
+  <meta name="description" content="Goal of this final week is to document and build our final project">
 
   <link rel="stylesheet" href=" /css/main.css">
-  <link rel="canonical" href=" /weeks/2015/06/07/class18.html">
+  <link rel="canonical" href=" /weeks/2015/06/03/class18.html">
   <link rel="alternate" type="application/rss+xml" title="Francesca Mereu" href=" /feed.xml" />
 </head>
 
@@ -65,11 +65,17 @@
   <header class="post-header"> 
  
     <h1 class="post-title">Project development </h1>
-    <p class="post-meta">Jun 7, 2015</p>
+    <p class="post-meta">Jun 3, 2015</p>
   </header>
 
   <article class="post-content">
-    <h3 id="development-log">Development log</h3>
+    <p>Goal of this final week is to document and build our final project</p>
+
+<h2 id="project-result">Project result</h2>
+<p>##Architecture
+##Parts, Case and the DIY sensor 
+##Software setup
+##Downloads</p>
 
 <h2 id="cutting-and-molding-the-sole">cutting and molding the sole</h2>
 
@@ -128,10 +134,26 @@ Void Loop() {
 <h2 id="making-the-press-board">making the “press-board”</h2>
 
 <h2 id="testing-the-sensor-with-the-press-board">testing the sensor with the “press-board”</h2>
-<p>## case </p>
+<p>## software</p>
 
-<h2 id="programming-with-python">programming with python</h2>
-<p>## Interface and application</p>
+<p>The software setup on the ATtiny44 can be easily done using the fabisp, </p>
+
+<pre><code>make press.out
+make press.hex
+make program-usbtiny 
+
+
+sudo pyton server. py which 
+vi serial worker.py 
+</code></pre>
+
+<p>You will also need to install the uvccapture utility using apt.</p>
+
+<p>Install python dependencies for PACO server is as easy as running:</p>
+
+<p>pip install -r requirements.txt</p>
+
+<p>which will setup bottle.py and pySerial.</p>
 
 
   </article>
