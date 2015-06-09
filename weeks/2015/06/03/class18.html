@@ -72,27 +72,85 @@
     <p>Goal of this final week is to document and build our final project</p>
 
 <h2 id="project-result">Project result</h2>
-<p>##Architecture
-##Parts, Case and the DIY sensor 
-##Software setup
-##Downloads</p>
+<p>For the final project presentation I managed to build a basic version of “Esole” with the following specifications:</p>
 
-<h2 id="cutting-and-molding-the-sole">cutting and molding the sole</h2>
+<ul>
+  <li>silicon insole <br /></li>
+  <li>custom pressure textile sensor <br /></li>
+  <li>pressure board <br /></li>
+  <li>sole case(shoes) with module for the board <br /></li>
+  <li>serial connections</li>
+  <li>web interface <br /></li>
+  <li>Basic Python API for controlling the above   <br /></li>
+</ul>
 
-<p>The second step of the making process is to prepare the base of the smart insole by the molding and casting tecnique.</p>
+<p>The second version will have next addeds:</p>
+
+<ul>
+  <li>bluetooth module hc 05 <br /></li>
+  <li>battery holder <br /></li>
+  <li>flexible sole case <br /></li>
+</ul>
+
+<h2 id="architecture">Architecture</h2>
+<p>The current prototype has the following architecture</p>
+
+<p><img src="/images/shoe+mode1.jpg" alt="My helpful..screenshot" /></p>
+
+<p>While the electronics components and protocols used can be summarised by the following diagram:</p>
+
+<p><img src="/images/schem-proj-01.png" alt="My helpful..screenshot" /></p>
+
+<p>I builded a  new electronic boards specific for the final project, “pressboard” made from hello board, so the heart of the board is the ATtiny 44, wich three pins for the analog textile pressure sensor. I was programming it in C  and  using a serial communication to read the data of the sensor. The data is visualizing  in a first time by the http protocol to local host on the computer and in second time by bluetooth module on the smartphone.</p>
+
+<h2 id="parts-case-and-the-diy-sensor">Parts, Case and the DIY sensor</h2>
+
+<h3 id="computer-aided-design--shoe-and-module">computer aided design:  shoe and module</h3>
+
+<p><img src="/images/shoe+mod2.jpeg" alt="My helpful..screenshot" /></p>
+
+<p><img src="/images/rhino.jpeg" alt="My helpful..screenshot" /></p>
+
+<p><img src="/images/I-cube-ali~2~.png" alt="My helpful..screenshot" /></p>
+
+<h3 id="d-printing">3d printing</h3>
+
+<p>The part of the packaging of the project is built with 3D printing and split in two parts: shoe and module,a little enclosure for the board and battery. Other parts don’t have any special requirements to be printed. Expect about 12 hours of printing to build the whole set at reasonable speed settings (i.e. 80mm/s). I made the insole in silicon rubber with a molding and casting technique, and the sensor with the velostat. </p>
+
+<p>The components to be printed are:</p>
+
+<ul>
+  <li>enclosure-shoe <br />    </li>
+  <li>case-module for electronics <br /></li>
+</ul>
+
+<p><img src="/images/icube.jpeg" alt="My helpful..screenshot" /></p>
+
+<p><img src="/images/molec.jpeg" alt="My helpful..screenshot" /></p>
+
+<h3 id="molding-and-casting-the-insole">molding and casting: the insole</h3>
+
+<p>The first step of the making process is to prepare the base of the smart insole by the molding and casting tecnique.
+I prepared a mold cutting a wood panel.</p>
 
 <p><img src="/images/laser insole.jpg" alt="My helpful..screenshot" /></p>
 
-<p>I prepare a mold cutting a wood panel</p>
+<p>I used the silicone-rubber of “Smooth on”, in part of 150 g of part A and 5% of part B</p>
 
 <p><img src="/images/insole3.jpg" alt="My helpful..screenshot" /></p>
 
 <p><img src="/images/insole4.jpg" alt="My helpful..screenshot" /></p>
 
-<h2 id="making-the-analog-textile-pressure-sensor">making the analog textile pressure sensor</h2>
+<h3 id="computer-controlled-cutting-sticker-logo">computer controlled cutting: sticker logo</h3>
+
+<p><img src="/images/vinyl-esole.png" alt="My helpful..screenshot" /></p>
+
+<h3 id="input-device-analog-textile-pressure-sensor">Input device: analog textile pressure sensor</h3>
 
 <p>I used Velostat/Linqstat (Carbon impregnated Polyethylene film ) and a conductive fabric to make an analog pressure sensor. 
 Velostat is a piezoresistive material, meaning it’s electrical resistance decreases when pressure. It’s pressure-sensitive: squeezing it will reduce the resistance, so it’s handy for making flexible sensors. When sandwiched between two conductive layers, it has a wonderful range for making pressure and bend sensors. It can also be used for position sensing. </p>
+
+<p><img src="/images/insole-pressure.png" alt="My helpful..screenshot" /></p>
 
 <p>The Analog textile pressbutton is a analog textile sensor that change his resistivity if you make pressure on it. It is useful for creating variable voltage divider that can be easily read by an Arduino.</p>
 
@@ -103,7 +161,7 @@ By connecting more sensors together it is possible to make a matrix analog switc
 
 <p><img src="/images/insole5.jpg" alt="My helpful..screenshot" /></p>
 
-<h2 id="testing-the-sensor">testing the sensor</h2>
+<h3 id="testing-the-sensor">testing the sensor</h3>
 
 <p>First I tested the sensor with lilypad arduino, then i tested it with my board.
 There’s the code that I used:</p>
@@ -131,29 +189,50 @@ Void Loop() {
 }
 </code></pre>
 
-<h2 id="making-the-press-board">making the “press-board”</h2>
+<h2 id="electronic-design-press-board">electronic design: “press-board”</h2>
 
-<h2 id="testing-the-sensor-with-the-press-board">testing the sensor with the “press-board”</h2>
-<p>## software</p>
+<p><img src="/images/pressboard.png" alt="My helpful..screenshot" /></p>
 
-<p>The software setup on the ATtiny44 can be easily done using the fabisp, </p>
+<p><img src="/images/board.jpeg" alt="My helpful..screenshot" /></p>
+
+<p>The software setup on the ATtiny44 can be easily done using the fabisp to program the Pressboard: </p>
 
 <pre><code>make press.out
 make press.hex
 make program-usbtiny 
+</code></pre>
 
+<h2 id="interface-and-application-websocket">Interface and application: websocket</h2>
 
-sudo pyton server. py which 
+<pre><code>sudo pyton server. py which 
 vi serial worker.py 
 </code></pre>
 
-<p>You will also need to install the uvccapture utility using apt.</p>
+<h2 id="downloads">Downloads</h2>
 
-<p>Install python dependencies for PACO server is as easy as running:</p>
+<h3 id="electronics">electronics</h3>
 
-<p>pip install -r requirements.txt</p>
+<p><a href="/files/week18/sensorPress-bordi.png"> Press </a><br /></p>
 
-<p>which will setup bottle.py and pySerial.</p>
+<p><a href="/files/week18/SensorPress-etching.png"> Press </a><br /></p>
+
+<h3 id="software">software</h3>
+
+<p><a href="/files/week18/makefile"> Press </a><br /></p>
+
+<p><a href="/files/week18/press.c"> Press </a><br /></p>
+
+<h3 id="vinyl-logo">vinyl logo</h3>
+
+<p><a href="/files/week18/vinyllogo-esole.png"> code2 </a><br /></p>
+
+<h3 id="d-printed-files">3d printed files</h3>
+
+<p><a href="/files/week18/scarpa 12 con mol.3ds"> shoe+case </a><br /></p>
+
+<p><a href="/files/week18/scarpa 12 con mol.3dm"> shoe+case </a><br /></p>
+
+<p><a href="/files/week18/scarpa12.stl"> shoe+case </a><br /></p>
 
 
   </article>
