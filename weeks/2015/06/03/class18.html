@@ -105,17 +105,20 @@
 
 <h2 id="parts-case-and-the-diy-sensor">Parts, Case and the DIY sensor</h2>
 
-<h3 id="computer-aided-design--shoe-and-module">computer aided design:  shoe and module</h3>
+<p><img src="/images/esole1.jpeg" alt="My helpful..screenshot" /></p>
 
-<p><img src="/images/shoe+mod2.jpeg" alt="My helpful..screenshot" /></p>
+<h3 id="computer-aided-design--shoe-and-module">computer aided design:  shoe and module</h3>
+<p>I was modelling all the parts of the enclosure by Rhinoceros and Sketchup </p>
 
 <p><img src="/images/rhino.jpeg" alt="My helpful..screenshot" /></p>
+
+<p><img src="/images/shoe+mod2.jpeg" alt="My helpful..screenshot" /></p>
 
 <p><img src="/images/I-cube-ali~2~.png" alt="My helpful..screenshot" /></p>
 
 <h3 id="d-printing">3d printing</h3>
 
-<p>The part of the packaging of the project is built with 3D printing and split in two parts: shoe and module,a little enclosure for the board and battery. Other parts don’t have any special requirements to be printed. Expect about 12 hours of printing to build the whole set at reasonable speed settings (i.e. 80mm/s). I made the insole in silicon rubber with a molding and casting technique, and the sensor with the velostat. </p>
+<p>The part of the packaging of the project is built with 3D printing and split in two parts: shoe and module,a little enclosure for the board and battery. Other parts don’t have any special requirements to be printed. Expect about 12 hours of printing to build the whole set at reasonable speed settings (i.e. 80mm/s). I used the WASP Delta 20x40. I made the insole in silicon rubber with a molding and casting technique, and the sensor with the velostat. </p>
 
 <p>The components to be printed are:</p>
 
@@ -124,7 +127,7 @@
   <li>case-module for electronics <br /></li>
 </ul>
 
-<p><img src="/images/icube.jpeg" alt="My helpful..screenshot" /></p>
+<p><img src="/images/esole-scarpa.jpeg" alt="My helpful..screenshot" /></p>
 
 <p><img src="/images/molec.jpeg" alt="My helpful..screenshot" /></p>
 
@@ -150,10 +153,6 @@ I prepared a mold cutting a wood panel.</p>
 <p>I used Velostat/Linqstat (Carbon impregnated Polyethylene film ) and a conductive fabric to make an analog pressure sensor. 
 Velostat is a piezoresistive material, meaning it’s electrical resistance decreases when pressure. It’s pressure-sensitive: squeezing it will reduce the resistance, so it’s handy for making flexible sensors. When sandwiched between two conductive layers, it has a wonderful range for making pressure and bend sensors. It can also be used for position sensing. </p>
 
-<p><img src="/images/insole-pressure.png" alt="My helpful..screenshot" /></p>
-
-<p>The Analog textile pressbutton is a analog textile sensor that change his resistivity if you make pressure on it. It is useful for creating variable voltage divider that can be easily read by an Arduino.</p>
-
 <p><img src="/images/textile.jpg" alt="My helpful..screenshot" /></p>
 
 <p>This analog press button works with resistive principle. It has a very high resistivity when not pressed, but its resistance goes down as soon as you press it. It works as a bend sensor as well.
@@ -161,7 +160,11 @@ By connecting more sensors together it is possible to make a matrix analog switc
 
 <p><img src="/images/insole5.jpg" alt="My helpful..screenshot" /></p>
 
-<h3 id="testing-the-sensor">testing the sensor</h3>
+<p>The Analog textile pressbutton is a analog textile sensor that change his resistivity if you make pressure on it. It is useful for creating variable voltage divider that can be easily read by an Arduino.</p>
+
+<p><img src="/images/insole-pressure.png" alt="My helpful..screenshot" /></p>
+
+<h3 id="testing-the-sensor-with-arduino">testing the sensor with Arduino</h3>
 
 <p>First I tested the sensor with lilypad arduino, then i tested it with my board.
 There’s the code that I used:</p>
@@ -193,7 +196,7 @@ Void Loop() {
 
 <p><img src="/images/pressboard.png" alt="My helpful..screenshot" /></p>
 
-<p><img src="/images/board.jpeg" alt="My helpful..screenshot" /></p>
+<p><img src="/images/board.jpg" alt="My helpful..screenshot" /></p>
 
 <p>The software setup on the ATtiny44 can be easily done using the fabisp to program the Pressboard: </p>
 
@@ -202,7 +205,13 @@ make press.hex
 make program-usbtiny 
 </code></pre>
 
-<h2 id="interface-and-application-websocket">Interface and application: websocket</h2>
+<h2 id="networking">Networking</h2>
+
+<p>Hc 05 Bluetooth module
+## Interface and application: websocket
+I used javascript</p>
+
+<p>The WebSocket specification—developed as part of the HTML5 initiative—introduced the WebSocket JavaScript interface, which defines a full-duplex single socket connection over which messages can be sent between client and server. The WebSocket standard simplifies much of the complexity around bi-directional web communication and connection management.</p>
 
 <pre><code>sudo pyton server. py which 
 vi serial worker.py 
