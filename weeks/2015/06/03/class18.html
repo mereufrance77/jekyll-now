@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Project development </title>
-  <meta name="description" content="Goal of this final week is to document and build our final project">
+  <meta name="description" content="Goal of this final week is to document and build our final project, and track and document our progress">
 
   <link rel="stylesheet" href=" /css/main.css">
   <link rel="canonical" href=" /weeks/2015/06/03/class18.html">
@@ -69,9 +69,60 @@
   </header>
 
   <article class="post-content">
-    <p>Goal of this final week is to document and build our final project</p>
+    <p>Goal of this final week is to document and build our final project, and track and document our progress</p>
 
-<h2 id="project-result">Project result</h2>
+<h2 id="project-results">Project results</h2>
+
+<p>what tasks have been completed, and what tasks remain?</p>
+
+<pre><code>Completed: 
+- building the pressure sensor
+- designing and stuffing the board
+- programming the board
+- developing the interface
+- designing the shoe and the module case
+- license
+Remained:
+- fabricate the shoe prototype by different materials
+- connecting the bluetooth module and programming it
+</code></pre>
+
+<p>what has worked? </p>
+
+<pre><code>- pressure textile sensor
+- custom board
+- web interface with websocket
+</code></pre>
+
+<p>what hasn’t?</p>
+
+<pre><code>- web interface first version
+- joint of the printed model
+</code></pre>
+
+<p>what questions need to be resolved?</p>
+
+<pre><code>- how using the insole to interact with another device?
+- how dissemination of project results to relevant stakeholders?
+- Which "exploitation" plan, as business model definition?
+</code></pre>
+
+<p>what will happen when?</p>
+
+<pre><code>I hope to wear this shoe on Fab11  
+</code></pre>
+
+<p>what have you learned?</p>
+
+<pre><code>- manage a project in all parts of fabrication process;
+- working all together 
+- solving the problem in many cases
+- working with electronic components
+- share results and ideas
+</code></pre>
+
+<h2 id="specifications">Specifications</h2>
+
 <p>For the final project presentation I managed to build a basic version of “Esole” with the following specifications:</p>
 
 <ul>
@@ -93,26 +144,24 @@
 </ul>
 
 <h2 id="architecture">Architecture</h2>
+
 <p>The current prototype has the following architecture</p>
 
 <p><img src="/images/shoe+mod1.jpg" alt="My helpful..screenshot" /></p>
 
-<p>While the electronics components and protocols used can be summarised by the following diagram:</p>
-
-<p><img src="/images/schem-proj-01.png" alt="My helpful..screenshot" /></p>
-
-<p>I builded a  new electronic boards specific for the final project, “pressboard” made from hello board, so the heart of the board is the ATtiny 44, wich three pins for the analog textile pressure sensor. I was programming it in C  and  using a serial communication to read the data of the sensor. The data is visualizing  in a first time by the http protocol to local host on the computer and in second time by bluetooth module on the smartphone.</p>
-
 <h2 id="parts-case-and-the-diy-sensor">Parts, Case and the DIY sensor</h2>
+
+<p>The project is composed of a lot of parts: the insole with sensor, the board and the shoe-case with the module. The module is a case of the electronic components: as the board with the bluetooth module and the battery. When the sole is working the module is lighting.</p>
 
 <p><img src="/images/esole1.jpeg" alt="My helpful..screenshot" /></p>
 
-<h3 id="computer-aided-design--shoe-and-module">computer aided design:  shoe and module</h3>
-<p>I was modelling all the parts of the enclosure by Rhinoceros and Sketchup </p>
+<h3 id="computer-aided-design--the-shoe-and--the-module">computer aided design:  the shoe and  the module</h3>
+
+<p>As I ‘m designer is important for me to make a good design for the shoe and the electronic module.
+I started from the concept of the heel  but in a second step I studied the insole and from it I build my shoes. 
+I was modelling this part by  Rhinoceros and Sketchup, 3d computer graphics and computer aided design (CAD)applications software. Rhinoceros geometry is based on NURBS mathematical model, which focuses on producing mathematically precise rapresentation of curves and freeform surface in computer graphics. I prefered to use it for modelling the shoe, because I thinked to use Grasshopper, a  Rhino plug-in,  to project parametrically the shoe case.</p>
 
 <p><img src="/images/rhino.jpeg" alt="My helpful..screenshot" /></p>
-
-<p><img src="/images/shoe+mod2.jpeg" alt="My helpful..screenshot" /></p>
 
 <p><img src="/images/I-cube-ali~2~.png" alt="My helpful..screenshot" /></p>
 
@@ -127,14 +176,13 @@
   <li>case-module for electronics <br /></li>
 </ul>
 
-<p><img src="/images/esole-scarpa.jpeg" alt="My helpful..screenshot" /></p>
+<p><img src="/images/esole2.jpeg" alt="My helpful..screenshot" /></p>
 
 <p><img src="/images/molec.jpeg" alt="My helpful..screenshot" /></p>
 
 <h3 id="molding-and-casting-the-insole">molding and casting: the insole</h3>
 
-<p>The first step of the making process is to prepare the base of the smart insole by the molding and casting tecnique.
-I prepared a mold cutting a wood panel.</p>
+<p>The first step of the making process is to prepare the base of the smart insole by the molding and casting tecnique. Then I prepared a mold cutting a wood panel (4x200x300 mm) by the lasercutter . I used 50mm thick birch plywood, and design must be adjusted for different materials. The cutting power I used on the FullSpectrum 90W laser cutter is 40% power 100% speed.</p>
 
 <p><img src="/images/laser insole.jpg" alt="My helpful..screenshot" /></p>
 
@@ -145,6 +193,8 @@ I prepared a mold cutting a wood panel.</p>
 <p><img src="/images/insole4.jpg" alt="My helpful..screenshot" /></p>
 
 <h3 id="computer-controlled-cutting-sticker-logo">computer controlled cutting: sticker logo</h3>
+
+<p>To signalize the sole with the sensor I thinked to also prepared some stickers with logo, allowing to customize the products case and have a good design look.</p>
 
 <p><img src="/images/vinyl-esole.png" alt="My helpful..screenshot" /></p>
 
@@ -158,15 +208,16 @@ Velostat is a piezoresistive material, meaning it’s electrical resistance decr
 <p>This analog press button works with resistive principle. It has a very high resistivity when not pressed, but its resistance goes down as soon as you press it. It works as a bend sensor as well.
 By connecting more sensors together it is possible to make a matrix analog switch.</p>
 
-<p><img src="/images/insole5.jpg" alt="My helpful..screenshot" /></p>
+<p><img src="/images/insole5.jpg" alt="My helpful..screenshot" />
+<img src="/images/esole-sensor.jpeg" alt="My helpful..screenshot" /></p>
 
 <p>The Analog textile pressbutton is a analog textile sensor that change his resistivity if you make pressure on it. It is useful for creating variable voltage divider that can be easily read by an Arduino.</p>
 
 <p><img src="/images/insole-pressure.png" alt="My helpful..screenshot" /></p>
 
-<h3 id="testing-the-sensor">testing the sensor</h3>
+<h3 id="testing-the-sensor-part1">Testing the sensor (part1)</h3>
 
-<p>First I tested the sensor with lilypad arduino, then i tested it with my board.
+<p>So, first I tested the sensor with lilypad arduino, afterwards I tested it with my board.
 There’s the code that I used:</p>
 
 <pre><code>Int SensorPin = a5;    // Select the Input pin for the Sensor
@@ -194,9 +245,207 @@ Void Loop() {
 
 <h2 id="electronic-design-press-board">electronic design: “press-board”</h2>
 
+<p>This analog press button works with resistive principle. I designed the pressboard considerating three pins : two for the sensor (press1 and press2) and another for the VCC. These are the images of the schematic board from Eagle cad and the soldered board.</p>
+
 <p><img src="/images/pressboard.png" alt="My helpful..screenshot" /></p>
 
 <p><img src="/images/board.jpg" alt="My helpful..screenshot" /></p>
+
+<h3 id="testing-the-sensor-part2">Testing the sensor (part2)</h3>
+<p>Finally I have programed the board in C. This is the code:</p>
+
+<p>In the first part I defined the macro</p>
+
+<pre><code> #include &lt;avr/io.h&gt;
+ #include &lt;util/delay.h&gt;
+
+ #define output(directions,pin) (directions |= pin) // set port direction for output
+ #define set(port,pin) (port |= pin) // set port pin
+ #define clear(port,pin) (port &amp;= (~pin)) // clear port pin
+ #define pin_test(pins,pin) (pins &amp; pin) // test for port pin
+ #define bit_test(byte,bit) (byte &amp; (1 &lt;&lt; bit)) // test for bit set
+ #define bit_delay_time 100 // bit delay for 9600 with overhead
+ #define bit_delay() _delay_us(bit_delay_time) // RS232 bit delay
+ #define half_bit_delay() _delay_us(bit_delay_time/2) // RS232 half bit delay
+ #define char_delay() _delay_ms(10) // char delay
+
+ #define serial_port PORTA
+ #define serial_direction DDRA
+ #define serial_pin_out (1 &lt;&lt; PA1) // pin Tx serial 
+ // write a char into a serial port
+</code></pre>
+
+<p>In this part it send character in txchar on port pin</p>
+
+<pre><code>void put_char(volatile unsigned char *port, unsigned char pin, char txchar) {
+&lt;	//
+	// send character in txchar on port pin
+	//	 assumes line driver (inverts bits)
+	//
+	// start bit
+	//
+	clear(*port,pin);
+	bit_delay();
+	//
+	// unrolled loop to write data bits
+	//
+	if bit_test(txchar,0)
+		set(*port,pin);
+	else
+		clear(*port,pin);
+	bit_delay();
+	if bit_test(txchar,1)
+		set(*port,pin);
+	else
+		clear(*port,pin);
+	bit_delay();
+	if bit_test(txchar,2)
+		set(*port,pin);
+	else
+		clear(*port,pin);
+	bit_delay();
+	if bit_test(txchar,3)
+		set(*port,pin);
+	else
+		clear(*port,pin);
+	bit_delay();
+	if bit_test(txchar,4)
+		set(*port,pin);
+	else
+		clear(*port,pin);
+	bit_delay();
+	if bit_test(txchar,5)
+		set(*port,pin);
+	else
+		clear(*port,pin);
+	bit_delay();
+	if bit_test(txchar,6)
+		set(*port,pin);
+	else
+		clear(*port,pin);
+	bit_delay();
+	if bit_test(txchar,7)
+		set(*port,pin);
+	else
+		clear(*port,pin);
+	bit_delay();
+	//
+	// stop bit
+	//
+	set(*port,pin);
+	bit_delay();
+	//
+	// char delay
+	//
+	bit_delay();
+}&gt;
+</code></pre>
+
+<p>In this part we read the sensor value on pin 1</p>
+
+<pre><code>// read sensor value
+	void readsensor1(){
+	   	static char chr;
+		   //initialize ADC 
+		   // init A/D
+		   //
+		   ADMUX =  (0 &lt;&lt; REFS1) | (0 &lt;&lt; REFS0) // Vcc ref
+		      | (0 &lt;&lt; ADLAR) // right adjust
+		      | (0 &lt;&lt; MUX5) | (0 &lt;&lt; MUX4) | (0 &lt;&lt; MUX3) | (0 &lt;&lt; MUX2) | (1 &lt;&lt; MUX1) | (1 &lt;&lt; MUX0); // ADC3 -configure pin
+		   ADCSRA = (1 &lt;&lt; ADEN) // enable
+		      | (1 &lt;&lt; ADPS2) | (1 &lt;&lt; ADPS1) | (1 &lt;&lt; ADPS0); // prescaler /128
+		   //
+	       //
+	       // initiate conversion
+	       //
+	       ADCSRA |= (1 &lt;&lt; ADSC);
+	       //
+	       // wait for completion
+	       //
+	       while (ADCSRA &amp; (1 &lt;&lt; ADSC)){ // while adsc not 0
+			   // nothing
+	
+   }
+   //
+   // send result
+   //
+   chr = ADCL;
+   put_char(&amp;serial_port, serial_pin_out, chr);
+   char_delay();
+   chr = ADCH;
+   put_char(&amp;serial_port, serial_pin_out, chr);
+   char_delay();
+   }
+</code></pre>
+
+<p>In this part we read the sensor value on pin2</p>
+
+<pre><code>void readsensor2(){
+   	static char chr;
+	   //
+	   // init A/D
+	   //
+	   ADMUX =  (0 &lt;&lt; REFS1) | (0 &lt;&lt; REFS0) // Vcc ref
+	      | (0 &lt;&lt; ADLAR) // right adjust
+	      | (0 &lt;&lt; MUX5) | (0 &lt;&lt; MUX4) | (0 &lt;&lt; MUX3) | (0 &lt;&lt; MUX2) | (1 &lt;&lt; MUX1) | (0 &lt;&lt; MUX0); //  ADC2
+	   ADCSRA = (1 &lt;&lt; ADEN) // enable
+	      | (1 &lt;&lt; ADPS2) | (1 &lt;&lt; ADPS1) | (1 &lt;&lt; ADPS0); // prescaler /128
+	   //
+       //
+       // initiate conversion
+       //
+       ADCSRA |= (1 &lt;&lt; ADSC);
+       //
+       // wait for completion
+       //
+       while (ADCSRA &amp; (1 &lt;&lt; ADSC))
+          ;
+       //
+       // send result
+       //
+       chr = ADCL;
+       put_char(&amp;serial_port, serial_pin_out, chr);
+       char_delay();
+       chr = ADCH;
+       put_char(&amp;serial_port, serial_pin_out, chr);
+       char_delay();
+
+   }
+
+
+
+int main(void) {
+   //
+   // main
+   //   
+   //
+   // set clock divider to /1
+   //
+   CLKPR = (1 &lt;&lt; CLKPCE);
+   CLKPR = (0 &lt;&lt; CLKPS3) | (0 &lt;&lt; CLKPS2) | (0 &lt;&lt; CLKPS1) | (0 &lt;&lt; CLKPS0);
+   //
+   // initialize output pins
+   //
+  set(serial_port, serial_pin_out);
+  output(serial_direction, serial_pin_out);  
+   // main loop
+   //
+   while (1) {
+      //
+  // send framing
+  //
+  put_char(&amp;serial_port, serial_pin_out, 1);
+  char_delay();
+  put_char(&amp;serial_port, serial_pin_out, 2);
+  char_delay();
+  put_char(&amp;serial_port, serial_pin_out, 3);
+  char_delay();
+  put_char(&amp;serial_port, serial_pin_out, 4);
+  char_delay();
+  readsensor1();
+  readsensor2();
+  //put_char(&amp;serial_port, serial_pin_out,'\n');   } }
+</code></pre>
 
 <p>The software setup on the ATtiny44 can be easily done using the fabisp to program the Pressboard: </p>
 
@@ -205,45 +454,35 @@ make press.hex
 make program-usbtiny 
 </code></pre>
 
-<h2 id="networking">Networking</h2>
+<p><img src="/images/esole-embedded.jpeg" alt="My helpful..screenshot" /></p>
 
-<p>Hc 05 Bluetooth module
-## Interface and application: websocket
-I used javascript</p>
+<h2 id="interface-and-application-websocket-on-pyton--web">Interface and application: websocket on Pyton- web</h2>
 
-<p>The WebSocket specification—developed as part of the HTML5 initiative—introduced the WebSocket JavaScript interface, which defines a full-duplex single socket connection over which messages can be sent between client and server. The WebSocket standard simplifies much of the complexity around bi-directional web communication and connection management.</p>
+<p><img src="/images/localhost.jpg" alt="My helpful..screenshot" /></p>
 
-<pre><code>sudo pyton server. py which 
-vi serial worker.py 
-</code></pre>
+<p>For Esole I write an interface using Javascript, a programming language of HTML and the Web, integrating with Raphael vector library to insert the svg and websocket, using the tutorial in the FabAcademy Archive (http://fabacademy.org/archives/2015/doc/WebSocketConsole.html) to communicate with the local server. I describe all parts of the working progress on my class page <a href="http://mereufrance77.github.io/classes/interfaceandapplicationprogramming"> Github </a><br /></p>
+
+<p>The complete demo looks like the following:</p>
+
+<p><img src="http://" alt="esole" /></p>
 
 <h2 id="downloads">Downloads</h2>
 
-<h3 id="electronics">electronics</h3>
+<p>-<a href="/files/week18/PressureS.brd"> eagle </a><br /></p>
 
-<p><a href="/files/week18/sensorPress-bordi.png"> eagle </a><br /></p>
+<p>-<a href="/files/week18/sensorPress-bordi.png"> mill </a><br /></p>
 
-<p><a href="/files/week18/sensorPress-bordi.png"> mill </a><br /></p>
+<p>-<a href="/files/week18/SensorPress-etching.png"> mill </a><br /></p>
 
-<p><a href="/files/week18/SensorPress-etching.png"> mill </a><br /></p>
+<p>-<a href="/files/week18/makefile"> Press </a><br /></p>
 
-<h3 id="software">software</h3>
+<p>-<a href="/files/week18/press.c"> Press </a><br /></p>
 
-<p><a href="/files/week18/makefile"> Press </a><br /></p>
+<p>-<a href="/files/week18/scarpa 12 con mol.3ds"> shoe+case model </a><br /></p>
 
-<p><a href="/files/week18/press.c"> Press </a><br /></p>
+<p>-<a href="/files/week18/scarpa12.stl"> shoe+case printed </a><br /></p>
 
-<h3 id="vinyl-logo">vinyl logo</h3>
-
-<p><a href="/files/week18/vinyllogo-esole.png"> sticker </a><br /></p>
-
-<h3 id="d-printed-files">3d printed files</h3>
-
-<p><a href="/files/week18/scarpa 12 con mol.3ds"> shoe+case </a><br /></p>
-
-<p><a href="/files/week18/scarpa 12 con mol.3dm"> shoe+case </a><br /></p>
-
-<p><a href="/files/week18/scarpa12.stl"> shoe+case </a><br /></p>
+<p>-<a href="/files/week18/vinyllogo-esole.png"> sticker </a><br /></p>
 
 
   </article>

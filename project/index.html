@@ -71,39 +71,41 @@
     <h3 id="smart-fab-insole">SMART FAB INSOLE</h3>
 <p>## a reactive insole with sensor pressure textile</p>
 
-<p>This project is a reactive insole that uses a custom textile pressure sensor to measure and visualize the pressure of the feet, to correct walking abnormalities or to monitorate the correct posture. I will create a smartphone application that wirelessly tracks data from the insole and provides a variety of instantaneous feedback. Users or physical therapists can choose from visual, audio or sensory feedback.</p>
+<p>This project is a reactive insole that uses a custom textile pressure sensor to measure and visualize the pressure of the feet. This sole is like a device to interact with another output device ( light, speaker etc.). For this reason I will created a web application that wirelessly tracks data from the insole , via bluetooth, and provides a variety of instantaneous feedback. Users  can choose from visual, audio or sensory feedback.</p>
 
 <p><img src="/images/esole4.jpg" alt="My helpful..screenshot" /></p>
 
 <h3 id="goals">Goals</h3>
 <p>In order to realize my project I foresee the following goals:</p>
 
-<p>-Design a <br /></p>
+<p>-Design a wearable device,that uses a part of the body as a control device  <br /></p>
 
-<ul>
-  <li><br /></li>
-</ul>
+<p>-Use data of the body <br /></p>
 
-<p>-Solicit, where possible, emotional feedback.<br /></p>
+<p>-Develop a working prototype and practice with a lot of materials to make a good projects  <br /></p>
 
-<p>-<br /></p>
+<p>-Disseminate a product ,insole, usually used in posture therapy, in fashion technology <br /></p>
 
-<p>-Interact with<br /></p>
+<p>-Solicit, where possible, emotional feedback<br /></p>
 
 <h3 id="design-considerations">Design considerations</h3>
-<p>In my concept the smart insole should not look like , or other known human-like forms. It should be something that could look like a design object, a  intelligent shoe, .</p>
+<p>In my concept the smart insole should not look like a medical device. It should be something that could look like a design object, confortable and pretty that is possible to wear in special moments like a fashion complement.</p>
 
-<p>For this reason the initial design looks like a , . Other designs can be considered in a similar way, i.e. a printed shoe, , n.</p>
+<p>For this reason the initial design looks like only a shoe (in the fisrt project). Other designs can be considered in a similar way, i.e. a printed shoe, but It’s not considered like a electronical device.</p>
 
-<p>The initial concept sketch provides a basic  like object in a vase. The device features a rotating eyeball, and the “main unit” itself rotates within the vase. Inside the case many sensors will be placed, possibly hidden by small holes, in order to have a less technological look.</p>
+<p>The initial concept sketch provides a basic shoe to content the insole. The device features a  electronic module with the board,situated behind the shoe. This module is a case inside the shoe,when it’s working it is light on, in order to have a more technological look.</p>
 
-<p><img src="/images/schizzo.jpg" alt="My helpful..screenshot" /></p>
+<p><img src="/images/schizzo.jpeg" alt="My helpful..screenshot" /></p>
 
-<h3 id="technical-considerations">Technical considerations</h3>
+<p><img src="/images/shoe+mod2.jpeg" alt="My helpful..screenshot" /></p>
 
-<p>It will do so using a custom micro-controller board, also contained into the wearable element. This decision was taken to maintain the design simpler, and more importantly reusable independently from the availability of new technologies on the interaction side.</p>
+<h3 id="technical-considerationn-and--specifications">Technical considerationn and  specifications</h3>
 
-<h3 id="technical-specifications">Technical specifications</h3>
+<p>I builded a  new electronic boards specific for the final project, “pressboard” made from hello board, so the heart of the board is the ATtiny 44, wich three pins for the analog textile pressure sensor. I was programming it in C  and  using a serial communication to read the data of the sensor. The data is visualizing  in a first time by the http protocol to local host on the computer and in second time by bluetooth module on the smartphone.</p>
+
+<p>While the electronics components and protocols used can be summarised by the following diagram:</p>
+
+<p><img src="/images/schem-proj-01.png" alt="My helpful..screenshot" /></p>
 
 <p>E-sole will contain the following electronic components:</p>
 
@@ -115,23 +117,18 @@
 
 <h3 id="useful-applications">Useful applications</h3>
 
-<p>The companion could prove to be very useful during many moments of the daily life.</p>
+<p>The insole could prove to be very useful during many moments of the daily life.</p>
 
-<p>Productivity</p>
+<p>Postural monitoring<br /></p>
 
-<p>For instance it could serve as a “productivity buddy” to help the user stay focused and complete tasks from a list, reminding him about events, arranging the daily schedule or controlling interruptions.</p>
+<p>By using the data  pressure sensor and web application the insole could provide to measure and visualize the pressure of the feet, to correct walking abnormalities or to monitorate the correct posture. I will create a smartphone application that wirelessly tracks data from the insole and provides a variety of instantaneous feedback. Users or physical therapists can choose from visual, audio or sensory feedback.<br /></p>
 
-<p>Social interface</p>
+<p>Fashion interface<br /></p>
 
-<p>The companion could provide access to the social networks in a more personal way, signaling interactions from the user;s friends, monitoring interesting feeds and providing alerts for relevant events. In specific moments, the companion could record speech notes, take pictures and videos to be directly fed to social streams at user’s will.</p>
+<p>The role of the smart insole could also be to provide up-to-date information, a fashion interface that interact with other fashion devices, as leds pendant or other accessorizes according with the user preferences, so is possible activate the pendant when the user is walking .<br /></p>
 
-<p>Media center</p>
-
-<p>The role of the companion could also be to provide up-to-date information, read audio-books and access to the user media library according with the user preferences but also context information provided by the mood detection features.</p>
-
-<p>Education</p>
-
-<p>By using the speech synthesis and recognition the companion could provide an easy mean for learning new languages, talking to the user into a foreign language, proposing drills and possibly correcting his spelling. Users of this application could also benefit from the “always on” capability of the device, also interacting with the user schedule to find free moments where to propose language learning activities.</p>
+<p>Music interaction<br />
+The Esole could provide access to a lot of interactions like a music. Thanks to a bluetooth module Esole could also  play music from the ipod or smartphone. So, it could be fun play music with your shoes!</p>
 
 <h2 id="first-project">first project</h2>
 
@@ -152,14 +149,14 @@ changing the color of your skin texture based on temperature;<br />
 2. change the cover skin in two ways; One way is to use a fabric printed with thermochromic ink, wich then reacts to the temperature change of foot and change the deign of texture.Another way is re-using plastic decoration on the top,like  3d printing accessorizes that you can attach on the top.</p>
 
 <h2 id="first-sketches">first sketches</h2>
-<p>The fisrt step  is developing the idea by sketching  on paper, naturally
+<p>The firstt step  is developing the idea by sketching on paper, naturally
 I attached some sketches here:</p>
 
 <p><img src="/images/sketch1.jpg" alt="My helpful..screenshot" />
 <img src="/images/sketch2.jpg" alt="My helpful..screenshot" /></p>
 
 <p>I thinked solving the change of the heel by a mechanism that use a motor dc  with 3d printing parts
-That are any sketches:</p>
+That are any sketches designin with Sketchup.</p>
 
 <p><img src="/images/strutscarpa.jpg" alt="My helpful..screenshot" /></p>
 

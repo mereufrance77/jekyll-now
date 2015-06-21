@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>interfaces and application programming</title>
-  <meta name="description" content="This week I write an application that interfaces with an input &amp;/or output device.">
+  <meta name="description" content="This week we have to write an application that interfaces with an input &amp;/or output device.">
 
   <link rel="stylesheet" href=" /css/main.css">
   <link rel="canonical" href=" /weeks/2015/05/06/class14%20.html">
@@ -69,21 +69,111 @@
   </header>
 
   <article class="post-content">
-    <p>This week I write an application that interfaces with an input &amp;/or output device.</p>
+    <p>This week we have to write an application that interfaces with an input &amp;/or output device.</p>
+
+<h2 id="esole-web-application">Esole: web application</h2>
+
+<p>I decided to write an application for my final project using Javascript, a programming language of HTML and the Web for a reason: I thinked that It could be a good approach for creating user interfaces to serial devices to build an interactive web page. Using a web-based GUI makes the interface portable to different screens and devices, like a laptop or a smartphone.</p>
+
+<p>So, in my project I have a device, Esole, communicating via serial protocol to a computer, using an FTDI interface
+to send data to and read data from the serial port: this could be commands or raw data coming from sensors to manipulate this data in a HTML webpage using Javascript. The communication goes by keeping an always-open communication channel from the webpage to the webserver, using the Web Sockets standard.</p>
+
+<p><img src="/images/schem-proj-01.png" alt="My helpful..screenshot" /></p>
 
 <h2 id="svg">svg</h2>
 
+<p>I’m working with graphics so I prepared an image svg to the web interface. 
+Scalable Vector Graphics (SVG) is an XML-based vector image format for two-dimensional graphics with support for interactivity and animation. SVG images and their behaviors are defined in XML text files. This means that they can be searched, indexed, scripted, and compressed. As XML files, SVG images can be created and edited with any text editor,like Texmate, but are more often created with drawing software: I used Adobe Ilustrator.
+I create the image using  six layers: three for press1 and three for press2. I Choose three different color for three different sensor value (high-medium-low).</p>
+
+<p><img src="/images/insole-interfaccia1.jpeg" alt="My helpful..screenshot" /></p>
+
 <h2 id="raphael-214--javascript-vector-library">Raphael 2.1.4 : javascript vector library</h2>
 
-<h2 id="websocket">Websocket</h2>
+<p>Raphael JS is a lightweight  JavaScript framework that allows to draw vector graphics in the browser.It takes advantage of the intersection between VML’s and SVG’s features to create vector graphics and animate them.</p>
 
-<p>http://fabacademy.org/archives/2015/doc/WebSocketConsole.html</p>
+<h2 id="using-websocket-on-pyton-web-based-serial-console">Using Websocket on Pyton Web-based Serial console</h2>
 
-<h2 id="source-files">Source Files</h2>
+<p>The insole will read and write to the serial port in an infinite loop.T he Webserver will have a separate “worker” thread deailing with the serial port, using an incoming and outgoing queue to handle concurrency.
+The WebSocket specification—developed as part of the HTML5 initiative—introduced the WebSocket JavaScript interface, which defines a full-duplex single socket connection over which messages can be sent between client and server. The WebSocket standard simplifies much of the complexity around bi-directional web communication and connection management.</p>
 
-<p><a href="raphaeljs.com"> code1 </a><br /></p>
+<p>I used this tutorial : <a href="http://fabacademy.org/archives/2015/doc/WebSocketConsole.html">Pyton web-based serial console using websockets</a>
+So I install several python packages, with this command:</p>
 
-<p><a href="/files/week14/ledy.ino"> code2 </a><br /></p>
+<pre><code>sudo pip install pyserial tornado multiprocessing
+</code></pre>
+
+<p>The pyserial module will allow us to access the serial port in the python environment. The tornado module contains all code needed to serve webpages and create websockets.</p>
+
+<p>After I create a page in html where I will host my user interface and send and receive data using the websocket.
+The Javascript code is contained in the main.js javascript below. I use the browser WebSocket object for interacting with the /ws endpoint.</p>
+
+<pre><code>$(document).ready(function(){
+
+   var socket = new WebSocket("ws://localhost:8080/ws");
+ 
+socket.onopen = function(){  
+  console.log("connected"); 
+}; 
+
+socket.onmessage = function (message) {
+  //console.log("receiving: ");
+  // console.log(message);
+  if (message.data == 'connected'){
+    return;
+  }
+  var data = JSON.parse(message.data);
+
+  if (data.sensor2 &lt; 550) {
+    window.showInf(0);
+  } else if (data.sensor2 &lt;900){
+    window.showInf(1);
+  } else {
+    window.showInf(2);
+  }
+
+  if (data.sensor1 &lt; 500) {
+    window.showSup(0);
+  } else if (data.sensor1 &lt; 900) {
+    window.showSup(1);
+  } else {
+    window.showSup(2);
+  }
+};
+
+socket.onclose = function(){
+  console.log("disconnected"); 
+};
+
+var sendMessage = function(message) {
+  console.log("sending:" + message.data);
+  socket.send(message.data);
+};
+
+});
+</code></pre>
+
+<p>The tornado web server allows us to serve webpages and also communicate via websockets.
+In the code I keep track of connected clients using the “clients” list, then Istart listening on the http port (default is 8080) for standard http requests on the “/” path, and for websocket requests on the ‘/ws’ path.</p>
+
+<p>There’s the command to run the application</p>
+
+<pre><code>sudo pyton server. py which 
+vi serial worker.py 
+</code></pre>
+
+<p><img src="/images/interface.jpeg" alt="My helpful..screenshot" /></p>
+
+<h2 id="sources">Sources</h2>
+
+<p>-<a href="/files/week14/insole-interfaccia1.svg"> svg </a><br />
+-<a href="/files/week14/src/e.sole.js"> esole </a><br />
+-<a href="/files/week14/src/index.html"> index </a><br />
+-<a href="/files/week14/src/main.js"> main </a><br />
+-<a href="/files/week14/src/raphael.js"> raphael </a><br />
+-<a href="/files/week14/src/serialworker.py"> serial </a><br />
+-<a href="/files/week14/src/serialworker.pyc"> serial </a><br />
+-<a href="/files/week14/src/server.py"> server </a><br /></p>
 
 
   </article>
