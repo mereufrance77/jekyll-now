@@ -73,8 +73,6 @@
 
 <p>For my final project I will also need to measure the flex of the foot,  and this can be done using the step-response mechanism. </p>
 
-<p><img src="/images/flexinoboard.jpeg" alt="My helpful..screenshot" /></p>
-
 <h1 id="flex-sensor">Flex sensor</h1>
 <p>A simple flex sensor 2.2” in length. As the sensor is flexed, the resistance across the sensor increases. The resistance of the flex sensor changes when the metal pads are on the outside of the bend (text on inside of bend).</p>
 
@@ -93,6 +91,8 @@
 <p>I used a sketch from  [bildr blog ] (http://bildr.org/2012/11/flex-sensor-arduino/)</p>
 
 <p>The Arduino code to be written was look very easy. There is a void setup where the port of the Serial Monitor is opened and a Void loop where the data is taken and resent as an analog data into Processing.</p>
+
+<p><img src="/images/ardu-flexsensor.jpeg" alt="My helpful..screenshot" /></p>
 
 <p>Here’s a basic Arduino sketch to show the output from your sensor:</p>
 
@@ -127,23 +127,6 @@ void loop()
   delay(100);                     
 }
 </code></pre>
-
-<h1 id="board-design">Board design</h1>
-<p>The first step of the assignment was to decide what parts of the board would be necessary and how many of them were not. As i will need to save as much space as possible. I redesigned the whole board in order not not have an additional microcontroller neither its own programming pins, so the board reduces considerably its size and its price aswell.</p>
-
-<p>The board is redesigned with Eagle, incorporating just the necessary components:</p>
-
-<ul>
-  <li>Attiny 44 <br /> </li>
-  <li>3 resistors 10K <br /> </li>
-  <li>1 resistor  499 <br /> </li>
-  <li>1 capacitor <br /> </li>
-  <li>head pins conector (2) <br /> </li>
-  <li>ftdi header <br /> </li>
-  <li>head pin conector (6) <br /> </li>
-</ul>
-
-<p><img src="/images/FLEXINO.jpg" alt="My helpful..screenshot" /> <img src="/images/flex1.jpg" alt="My helpful..screenshot" /></p>
 
 <h1 id="programming-with-processing">Programming with Processing</h1>
 <p>As the program of the Processing was a little bit more difficult and it was the first time opening this software, it took me longer not just to write the code but to understand the process that Processing is doing through Arduino code.</p>
@@ -200,14 +183,171 @@ void loop()
   </li>
 </ol>
 
+<h1 id="board-design-a-flex-board">Board design: a flex board</h1>
+<p>The first step of the assignment was to decide what parts of the board would be necessary and how many of them were not. As i will need to save as much space as possible. I redesigned the whole board in order not not have an additional microcontroller neither its own programming pins, so the board reduces considerably its size and its price aswell.</p>
+
+<p>The board is redesigned with Eagle, incorporating just the necessary components:</p>
+
+<ul>
+  <li>Attiny 44 <br /> </li>
+  <li>3 resistors 10K <br /> </li>
+  <li>1 resistor  499 <br /> </li>
+  <li>1 capacitor <br /> </li>
+  <li>head pins conector (2) <br /> </li>
+  <li>ftdi header <br /> </li>
+  <li>head pin conector (6) <br /> </li>
+</ul>
+
+<p><img src="/images/FLEXINO.jpg" alt="My helpful..screenshot" /> <img src="/images/flex1.jpg" alt="My helpful..screenshot" /></p>
+
+<h2 id="programming-the-board">Programming the board</h2>
+
+<pre><code>#include &lt;avr/io.h&gt;
+#include &lt;util/delay.h&gt;
+
+#define output(directions,pin) (directions |= pin) // set port direction for output
+#define set(port,pin) (port |= pin) // set port pin
+#define clear(port,pin) (port &amp;= (~pin)) // clear port pin
+#define pin_test(pins,pin) (pins &amp; pin) // test for port pin
+#define bit_test(byte,bit) (byte &amp; (1 &lt;&lt; bit)) // test for bit set
+#define bit_delay_time 102 // bit delay for 9600 with overhead
+#define bit_delay() _delay_us(bit_delay_time) // RS232 bit delay
+#define half_bit_delay() _delay_us(bit_delay_time/2) // RS232 half bit delay
+#define char_delay() _delay_ms(10) // char delay
+
+#define serial_port PORTA
+#define serial_direction DDRA
+#define serial_pin_out (1 &lt;&lt; PA3)
+</code></pre>
+
+<p>void put_char(volatile unsigned char *port, unsigned char pin, char txchar) {</p>
+
+<p>send character in txchar on port pin
+   //    assumes line driver (inverts bits)</p>
+
+<pre><code>   clear(*port,pin);
+   bit_delay();
+   //
+   // unrolled loop to write data bits
+   //
+   if bit_test(txchar,0)
+      set(*port,pin);
+   else
+      clear(*port,pin);
+   bit_delay();
+   if bit_test(txchar,1)
+      set(*port,pin);
+   else
+      clear(*port,pin);
+   bit_delay();
+   if bit_test(txchar,2)
+      set(*port,pin);
+   else
+      clear(*port,pin);
+   bit_delay();
+   if bit_test(txchar,3)
+      set(*port,pin);
+   else
+      clear(*port,pin);
+   bit_delay();
+   if bit_test(txchar,4)
+      set(*port,pin);
+   else
+      clear(*port,pin);
+   bit_delay();
+   if bit_test(txchar,5)
+      set(*port,pin);
+   else
+      clear(*port,pin);
+   bit_delay();
+   if bit_test(txchar,6)
+      set(*port,pin);
+   else
+      clear(*port,pin);
+   bit_delay();
+   if bit_test(txchar,7)
+      set(*port,pin);
+   else
+      clear(*port,pin);
+   bit_delay();
+   //
+   // stop bit
+   //
+   set(*port,pin);
+   bit_delay();
+   //
+   // char delay
+   //
+   bit_delay();
+   }
+</code></pre>
+
+<p>int main(void) {
+    //
+    // main
+    //
+    static char chr;
+    //
+    // set clock divider to /1
+    //
+    CLKPR = (1 « CLKPCE);
+    CLKPR = (0 « CLKPS3) | (0 « CLKPS2) | (0 « CLKPS1) | (0 « CLKPS0);
+    //
+    // initialize output pins
+    //
+    set(serial_port, serial_pin_out);
+    output(serial_direction, serial_pin_out);
+    //
+    // init A/D
+    //
+    ADMUX = (0 « REFS1) | (0 « REFS0) // Vcc ref
+       | (0 « ADLAR) // right adjust
+       |(0 « MUX5) | (0 « MUX4) | (0 « MUX3) | (0 « MUX2) | (1 « MUX1) | (1 « MUX0); // ADC3
+    ADCSRA = (1 « ADEN) // enable
+       | (1 « ADPS2) | (1 « ADPS1) | (1 « ADPS0); // prescaler /128</p>
+
+<p>while (1) {
+      //
+      // send framing
+      //
+      put_char(&amp;serial_port, serial_pin_out, 1);
+      char_delay();
+      put_char(&amp;serial_port, serial_pin_out, 2);
+      char_delay();
+      put_char(&amp;serial_port, serial_pin_out, 3);
+      char_delay();
+      put_char(&amp;serial_port, serial_pin_out, 4);
+      char_delay();
+      //
+      // initiate conversion
+      //
+      ADCSRA |= (1 « ADSC);
+      //
+      // wait for completion
+      //
+      while (ADCSRA &amp; (1 « ADSC))
+         ;
+      //
+      // send result
+      //
+      chr = ADCL;
+      put_char(&amp;serial_port, serial_pin_out, chr);
+      char_delay();
+      chr = ADCH;
+      put_char(&amp;serial_port, serial_pin_out, chr);
+      char_delay();
+      }
+   }</p>
+
 <h2 id="source-files">Source Files</h2>
-<p><a href="/files/week10/flexino-etching.png">flexino Board</a><br /></p>
-
-<p><a href="/files/week10/flexino-cutting.png">flexino Board</a><br /></p>
-
-<p><a href="/files/week10/flexsensor.ino">flexino code Arduino</a><br /></p>
-
-<p><a href="/files/week10/flexsensor.pde">flexino code Processing</a><br /></p>
+<p>-<a href="/files/week10/flexino.brd">eagle-brd</a><br />
+-<a href="/files/week10/flexino.sch">eagle-sch</a><br />
+-<a href="/files/week10/flexino-etching.png">flexino Board</a><br />
+-<a href="/files/week10/flexino-cutting.png">flexino Board</a><br />
+-<a href="/files/week10/flexsensor/flexsensor.ino">flex code Arduino</a><br />
+-<a href="/files/week10/flexino/flexino.pde">flex code Processing</a><br />
+-<a href="/files/week10/flex/flex.c">flex code</a><br />
+-<a href="/files/week10/flex/Makefile">flex code</a><br /></p>
 
 
   </article>

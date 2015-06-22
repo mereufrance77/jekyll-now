@@ -116,7 +116,7 @@ int main(void) {
    //
    ADMUX = (0 << REFS1) | (0 << REFS0) // Vcc ref
       | (0 << ADLAR) // right adjust
-      |(0 << MUX5) | (0 << MUX4)) (0 << MUX3) | (0 << MUX2) | (1 << MUX1) | (1 << MUX0); // ADC3
+      |(0 << MUX5) | (0 << MUX4) | (0 << MUX3) | (0 << MUX2) | (1 << MUX1) | (1 << MUX0); // ADC3
    ADCSRA = (1 << ADEN) // enable
       | (1 << ADPS2) | (1 << ADPS1) | (1 << ADPS0); // prescaler /128
    //

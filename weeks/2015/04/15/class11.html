@@ -73,14 +73,8 @@
 
 <p>As my interests are about wearable electronics, I wanted to investigate something with it and to advance some of my project design.</p>
 
-<h1 id="led-array">Led array</h1>
-
-<p>I used the technique of CharliePlexing to make a led array using few pins. This technique  in few words allows to control up to n*(n-1) leds with n pins. When using more than 2 pins it does so by switching one of the pins as input rather than output, thus disconnecting the pin from the circuit.</p>
-
-<h1 id="wearable-light">Wearable light</h1>
-<p>My goal was to create a small wearable board with the connection for the battery ,using the ATtiny44 and exposing as many leds as possible, and also being able to use it directly in the Arduino IDE. </p>
-
-<p>I started from the eagle schematic of the helloboard and </p>
+<h1 id="ledy-board-a-wearable-light-board">Ledy board: a wearable light board</h1>
+<p>My goal was to create a small wearable board with the connection for the battery, using the ATtiny44 and exposing as many leds as possible. I started from the eagle schematic of the helloboard and this time, I decided to have a more traditional square board, but to add six leds.</p>
 
 <p><img src="/images/ledy-schematic.png" alt="My helpful..screenshot" /></p>
 
@@ -88,19 +82,54 @@
 
 <p><img src="/images/ledy-board.jpg" alt="My helpful..screenshot" /></p>
 
+<h1 id="led-array-charlieplexing">Led array-Charlieplexing</h1>
+<p>Sketching the schematic I quickly found out that the avaiable pins, after adding the headers and button were only three. In order to support more LEDS I knew I could use a technique called CharliePlexing.
+I used the technique of CharliePlexing to make a led array using few pins. This technique  in few words allows to control up to n*(n-1) leds with n pins. When using more than 2 pins it does so by switching one of the pins as input rather than output, thus disconnecting the pin from the circuit. Thanks to this technique is possible to reduce duty cycle of the current that flows through the LEDs; thus, to maintain a given brightness, the peak current through the LEDs
+must be increased proportionately, which can quickly reach the maximum peak current limit of the LED. 
+Nonetheless, Charlieplexing is a feasible technique for up to ten I/O lines, allowing up to 90 LEDs to be controlled. Controlling an equivalent number of LEDs using the standard multiplexing technique would require 19 I/O lines.
+This image shows a microcontroller with just three I/O pins and six LEDs connected as shown.</p>
+
+<p><img src="/images/charlieplex.jpg" alt="My helpful..screenshot" /></p>
+
 <h1 id="programming-the-board">Programming the board</h1>
+
+<pre><code>#include &lt;avr/io.h&gt;
+#include &lt;util/delay.h&gt;
+
+#define output(directions,pin) (directions |= pin) // set port direction for output
+#define input(directions,pin) (directions &amp;= (~pin)) // set port direction for input 
+#define set(port,pin) (port |= pin) // set port pin
+#define clear(port,pin) (port &amp;= (~pin)) // clear port pin
+#define pin_test(pins,pin) (pins &amp; pin) // test for port pin
+#define bit_test(byte,bit) (byte &amp; (1 &lt;&lt; bit)) // test for bit set
+
+#define led_delay() _delay_ms(1) // LED delay
+
+#define led_port PORTA
+#define led_direction DDRA
+
+#define led_port PORTB
+#define led_direction DDRB
+
+#define A (1 &lt;&lt; PB2) // row 1
+#define B (1 &lt;&lt; PB0) // row 2
+#define C (1 &lt;&lt; PA7) // row 3
+</code></pre>
+
+<p>each board created/device used
+what it does<br />
+what protocol it uses  </p>
+
+<h2 id="what-i-learned">What I learned</h2>
 
 <h2 id="source-files">Source Files</h2>
 
-<p><a href="/files/week11/ledy.sch">Ledy eagle</a><br /></p>
-
-<p><a href="/files/week11/ledy.brd">Ledy schematic</a><br /></p>
-
-<p><a href="/files/week11/ledy-etching-front.png">Ledy Board</a><br /></p>
-
-<p><a href="/files/week11/ledy-etching-restro.png">Ledy Board</a><br /></p>
-
-<p><a href="/files/week11/ledy.ino"> code </a><br /></p>
+<p>-<a href="/files/week11/ledy.sch">Ledy eagle</a><br />
+-<a href="/files/week11/ledy.brd">Ledy schematic</a><br />
+-<a href="/files/week11/ledy-etching-front.png">Ledy Board</a><br />
+-<a href="/files/week11/ledy-etching-restro.png">Ledy Board</a><br />
+-<a href="/files/week11/ledy/ledy.c">code</a><br />
+-<a href="/files/week11/ledy/Makefile">code</a><br /></p>
 
 
   </article>

@@ -93,7 +93,7 @@ These are the initial design for the “helloboard”. Can you see some problems
 
 <p><img src="/images/helloschematic.jpg" alt="My helpful..screenshot" /></p>
 
-<p>This is the final design board,with the layer’s element and the clean image, that I exported on .PNG monochrome with a resolution of 500 px  for the milling machine.</p>
+<p>This is the final design board,with the layer’s element and the clean image, that I exported on .PNG monochrome with a resolution of 1000 px  for the milling machine.</p>
 
 <p><img src="/images/helloworldfinal.jpg" alt="My helpful..screenshot" /></p>
 
@@ -120,22 +120,30 @@ This is the loaded image board:</p>
 
 <p><img src="/images/stuff2.jpg" alt="My helpful..screenshot" /></p>
 
-<h1 id="testing-the-design">Testing the design</h1>
+<h1 id="update-on-21-march-lilyfab">Update on 21 March: lilyfab</h1>
+<p>Since the first example board was not compliant with the Hello World board design, I decided to try another design. 
+so I ‘m thinking to cloning the lilypad board. The LilyPad Arduino is a microcontroller board designed for wearables and e-textiles.  It can be sewn to fabric and similarly mounted power supplies, sensors and actuators with conductive thread. The board is based on the ATmega168V (the low-power version of the ATmega168) or the ATmega328V. The LilyPad Arduino was designed and developed by Leah Buechley and SparkFun Electronics. </p>
 
-<p><img src="/images/test2.jpg" alt="My helpful..screenshot" /></p>
+<p>It maybe a part of my final project and also would give me a hard time having to create a single layer layout for components.</p>
 
-<p>As suggested during the class, I investigated the options for testing the circuit before building it. I knowed 123d Circuit App</p>
+<p>I started from the eagle schematic of the original board, and I modified to mill a new board with only one layer!  The nex step is designing a second version of the board with two layers.</p>
 
-<h1 id="update-on-21-march">Update on 21 March</h1>
-<p>Since the first example board was not compliant with the Hello World board design, I decided to try another design. This time,  I decided to have a more traditional square board, but to add six leds and a button instead.</p>
+<p><img src="/images/lilyfab-modela.jpg" alt="My helpful..screenshot" /></p>
 
-<p>The 123D Circuits app is really simple to use, and simulator itself is very nice showing the actual board working with LEDs lighting. </p>
+<p><img src="/images/lilyfab-mill.jpg" alt="My helpful..screenshot" /></p>
 
-<p>Sketching the schematic I quickly found out that the avaiable pins, after adding the headers and button were only three. In order to support more LEDS I knew I could use a technique called CharliePlexing, which I heard about in the past but didn’t have yet the opportunity to try in one of my designs.</p>
+<p><img src="/images/lilyfab-stuff.jpg" alt="My helpful..screenshot" /></p>
 
 <h1 id="source-files">Source Files</h1>
-<p><a href="/files/week06/etching7.png">helloboard</a>
-<a href="/files/week06/etching-bordiF.png">helloboard-contourn</a></p>
+
+<p>-<a href="/files/week06/etching7.png">helloboard</a><br />
+-<a href="/files/week06/etching-bordiF.png">helloboard-contourn</a><br />
+-<a href="/files/week06/hello.brd">helloboard-eagle</a><br />
+-<a href="/files/week06/hello.sch">helloboard-sch</a><br />
+-<a href="/files/week06/lilyfab.brd">Lilyfab-eagle</a><br />
+-<a href="/files/week06/lilyfab.sch">Lilyfab-sch</a><br />
+-<a href="/files/week06/lilyfab-etching.png">Lilyfab-etching</a><br />
+-<a href="/files/week06/lilyfab-cutting.png">Lilyfab-sch</a><br /></p>
 
 
   </article>

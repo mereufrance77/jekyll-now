@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>mechanical design,machine design</title>
-  <meta name="description" content="Ringbot##a machine that ….rings">
+  <meta name="description" content="This week we have to make a machine, including the end effector, build the passive parts and operate it manually. We have to document the group project and o...">
 
   <link rel="stylesheet" href=" /css/main.css">
   <link rel="canonical" href=" /weeks/2015/05/20/class16%20.html">
@@ -69,31 +69,69 @@
   </header>
 
   <article class="post-content">
-    <h2 id="ringbot">Ringbot</h2>
-<p>##a machine that ….rings</p>
+    <p>This week we have to make a machine, including the end effector, build the passive parts and operate it manually.
+ We have to document the group project and our individual contribution</p>
 
-<h2 id="concept-design">Concept design</h2>
+<h2 id="m2m-ring--a-machine-that--make-wax-rings">M2M ring : a machine that  make wax rings</h2>
 
-<p><img src="/images/mandrinoesp.jpeg" alt="My helpful..screenshot" /></p>
+<p>CNC rings machine 4 axes mills
+ CNC Milling machines can be divided into three categories, determined by the number of axes they have (i.e. the number of directions the spindle can move). A basic 3d mill has 3 axes: X, Y, and Z, or in more simple terms: it can move the spindle side to side, back to front, and up and down. Such a machine is suitable for engravings or bas-reliefs – pieces that are cut only from one side.
+ CNC mill can produce wax models that cast easily and require little to no post-production work because of the high quality of the surface.</p>
+
+<p>The machine that we have to build is a four-axis milling machine  for wax rings.
+ Intermediate mill has 4 axes: X, Y, Z and rotary A axis. This 4th axis can be used as a lathe (i.e. the spindle can move while the axis is rotating), as an automatic flipper (i.e. cut one side of an object, instruct 4th axis to move 180 degrees, cut the second side), or as an indexed cutter (i.e. cut one segment, rotate by a specified number of degrees, cut second segment, etc.). This extra axis allow you to create more complex shapes. If you are comfortable with some manual work, you can also reposition the model after one segment of milling work is done and start another segment with the re-oriented model. For example, you can produce a ring with a pronged head by cutting from top and bottom and then repositioning the ring vertically to be finished off in a rotary fashion. Majority of traditional jewelry can be created this way.</p>
+
+<p>Billing material</p>
+
+<p>Eletronics</p>
+
+<p><a href="https://github.com/ifala/m2m_ring">m2m ring</a></p>
+
+<h2 id="my-contribution">My contribution</h2>
+
+<p>My work consists to design a spindle for the wax ring. 
+My reference for this design is a chuck for watch, like these:</p>
+
+<p>The spindle is composed by two parts:</p>
+
+<ol>
+  <li>“spindle”-principal part. This piece is a conical</li>
+</ol>
+
+<p><img src="/images/splindle persp.png" alt="My helpful..screenshot" /></p>
+
+<p><img src="/images/spindle-front.png" alt="My helpful..screenshot" /></p>
+
+<ol>
+  <li>“plug slightly conical”.It serves to insert it in the spindle so as to create a radial expansion thereof to ensure the locking of the ring on the step in which will be placed.</li>
+</ol>
 
 <p><img src="/images/spina conica.jpeg" alt="My helpful..screenshot" /></p>
 
-<p><img src="/images/fascetta.jpeg" alt="My helpful..screenshot" /></p>
-
-<h2 id="what-i-learned">What I learned</h2>
-
 <h2 id="troubleshooting">Troubleshooting</h2>
+
+<p>The spindle has been corrected to the extent of 9.75 mm at the base of attack, also to make the clutch integral with the shaft of the machine. It has a clamp in which to insert the bolt.</p>
+
+<p>In the other piece, the plug slightly conical, the diameter intended for coupling with the crankshaft has been reduced by 2 mm compared to the previous design, it has gone from 9.75 [mm] 7.75 [mm]. </p>
 
 <h2 id="tips-for-improvement">Tips for improvement</h2>
 
+<p>I was prepared a clamp that will be mounted on the ends of the spindle, it will prevent that the plug can not slide with the vibrations.</p>
+
+<p>In correspondence of the clamp base, I have introduced a gap perpendicular to the axis of revolution of the solid, this will allow greater flexibility in closure of the clamp itself.</p>
+
+<p>The stop pin has a through hole of the diameter of the bar.</p>
+
+<h2 id="what-i-learned">What I learned</h2>
+
 <h2 id="sources">Sources</h2>
 
-<p>-<a href="/files/week16/ringbot/mandrinoespandibile -News.skp"> mandrino skp </a><br />
--<a href="/files/week16/ringbot/mandridnoespandibile-News.stl"> mandrino stl </a><br />
--<a href="/files/week16/ringbot/spina conica 2.skp"> spina conica skp </a><br />
--<a href="/files/week16/ringbot/spina conica 2.stl"> spina conica stl </a><br />
--<a href="/files/week16/ringbot/fascetta.skp"> fascetta.skp </a><br />
--<a href="/files/week16/ringbot/fascetta.stl"> fascetta.stl </a><br /></p>
+<p>-<a href="/files/week16/spindle ring/mandrinoespandibile -News.skp"> splindle skp </a><br />
+-<a href="/files/week16/spindle ring/mandridnoespandibile-News.stl"> splindle stl </a><br />
+-<a href="/files/week16/spindle ring/spina conica 2.skp"> conical plug skp </a><br />
+-<a href="/files/week16/spindle ring/spina conica 2.stl"> conical plug stl </a><br />
+-<a href="/files/week16/spindle ring/fascetta.skp"> clamp.skp </a><br />
+-<a href="/files/week16/spindle ring/fascetta.stl"> clamp.stl </a><br /></p>
 
 
   </article>
