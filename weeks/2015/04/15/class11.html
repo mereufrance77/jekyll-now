@@ -74,6 +74,7 @@
 <p>As my interests are about wearable electronics, I wanted to investigate something with it and to advance some of my project design.</p>
 
 <h1 id="ledy-board-a-wearable-light-board">Ledy board: a wearable light board</h1>
+
 <p>My goal was to create a small wearable board with the connection for the battery, using the ATtiny44 and exposing as many leds as possible. I started from the eagle schematic of the helloboard and this time, I decided to have a more traditional square board, but to add six leds.</p>
 
 <p><img src="/images/ledy-schematic.png" alt="My helpful..screenshot" /></p>
@@ -83,11 +84,12 @@
 <p><img src="/images/ledy-board.jpg" alt="My helpful..screenshot" /></p>
 
 <h1 id="led-array-charlieplexing">Led array-Charlieplexing</h1>
-<p>Sketching the schematic I quickly found out that the avaiable pins, after adding the headers and button were only three. In order to support more LEDS I knew I could use a technique called CharliePlexing.
-I used the technique of CharliePlexing to make a led array using few pins. This technique  in few words allows to control up to n*(n-1) leds with n pins. When using more than 2 pins it does so by switching one of the pins as input rather than output, thus disconnecting the pin from the circuit. Thanks to this technique is possible to reduce duty cycle of the current that flows through the LEDs; thus, to maintain a given brightness, the peak current through the LEDs
-must be increased proportionately, which can quickly reach the maximum peak current limit of the LED. 
-Nonetheless, Charlieplexing is a feasible technique for up to ten I/O lines, allowing up to 90 LEDs to be controlled. Controlling an equivalent number of LEDs using the standard multiplexing technique would require 19 I/O lines.
-This image shows a microcontroller with just three I/O pins and six LEDs connected as shown.</p>
+
+<p>Sketching the schematic I quickly found out that the avaiable pins, after adding the headers and button were only three. In order to support more LEDS I knew I could use a technique called CharliePlexing.</p>
+
+<p>I used the technique of CharliePlexing to make a led array using few pins. This technique in few words allows to control up to n*(n-1) leds with n pins. When using more than 2 pins it does so by switching one of the pins as input rather than output, thus disconnecting the pin from the circuit. Thanks to this technique is possible to reduce duty cycle of the current that flows through the LEDs; thus, to maintain a given brightness, the peak current through the LEDs must be increased proportionately, which can quickly reach the maximum peak current limit of the LED. Nonetheless, Charlieplexing is a feasible technique for up to ten I/O lines, allowing up to 90 LEDs to be controlled. Controlling an equivalent number of LEDs using the standard multiplexing technique would require 19 I/O lines.</p>
+
+<p>This image shows a microcontroller with just three I/O pins and six LEDs connected as shown.</p>
 
 <p><img src="/images/charlieplex.jpg" alt="My helpful..screenshot" /></p>
 
@@ -116,11 +118,11 @@ This image shows a microcontroller with just three I/O pins and six LEDs connect
 #define C (1 &lt;&lt; PA7) // row 3
 </code></pre>
 
-<p>each board created/device used
-what it does<br />
+<p>what it does<br />
 what protocol it uses  </p>
 
 <h2 id="what-i-learned">What I learned</h2>
+<p>This week I learned to </p>
 
 <h2 id="source-files">Source Files</h2>
 
@@ -185,6 +187,8 @@ what protocol it uses  </p>
           
         </ul>
       </div>
+	  
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">esole</span> by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Francesca Mereu</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional License</a>.
 
       <div class="footer-col  footer-col-3">
         <p class="text">This a FabAcademy 2015 website. There are all processes of my work, experiments,  prototypes..
