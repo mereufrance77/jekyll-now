@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>electronics design (Mar 4)</title>
+  <title>electronics design</title>
   <meta name="description" content="The assignment for this week is to produce the Hello World board, adding at least a button and an LED to the original design, using some of the proposed soft...">
 
   <link rel="stylesheet" href=" /css/main.css">
@@ -64,14 +64,14 @@
 
   <header class="post-header"> 
  
-    <h1 class="post-title">electronics design (Mar 4)</h1>
+    <h1 class="post-title">electronics design</h1>
     <p class="post-meta">Mar 4, 2015</p>
   </header>
 
   <article class="post-content">
     <p>The assignment for this week is to produce the Hello World board, adding at least a button and an LED to the original design, using some of the proposed software. Furthermore we should investigate the tools needed to simulate electronic designs.</p>
 
-<h1 id="hello-world-board">Hello World board</h1>
+<h2 id="hello-world-board">Hello World board</h2>
 <p>I’m a designer and visual artist and I don’t have many experience with electronic design, so in order to experiment with this theme I started with the goal of creating a basic “ Hello World” board adding a led and a button.</p>
 
 <p>Hello World board uses ATTiny44 as microconrtroller. ATtiny  is produced by Atmel Corporation. Atmel The smallest in their AVR family of microcontrollers are the ATtiny series (8-bit core and fewer features, fewer I/O pins, and less memory than other AVR series, all of them are available in through-hole package).The AVR is a modified Harvard architecture 8-bit RISC single-chip microcontroller, which was developed by Atmel in 1996. The AVR was one of the first microcontroller families to use on-chip flash memory for program storage, as opposed to one-time programmable ROM, EPROM, or EEPROM used by other microcontrollers at the time.</p>
@@ -79,7 +79,7 @@
 <p>First I spent some time on the ATTiny44 datasheet in order to have a clear idea of its pinout.
 I attached a link for this: &lt;(http://www.atmel.com/Images/doc8006.pdf)&gt;</p>
 
-<h1 id="electronig-design-with-eagle-cad-software">Electronig design with Eagle cad software</h1>
+<h2 id="electronig-design-with-eagle-cad-software">Electronig design with Eagle cad software</h2>
 <p>Getting back to the board, I started to model the schematics in Eagle, a software for designing prined circuit boards, and produced my first design, including a leds and the required resistors, plus a button. 
 This was the first time that I design a board circuit so as first step I downloaded the software and the libraries of fablab and Sparkfun.
 EAGLE contains a schematic editor, for designing circuit diagrams. Parts can be placed on many sheets and connected together through ports.
@@ -99,7 +99,7 @@ These are the initial design for the “helloboard”. Can you see some problems
 
 <p><img src="/images/helloworldred.jpg" alt="My helpful..screenshot" /></p>
 
-<h1 id="milling-and-stuffing-the-board">Milling and stuffing the board</h1>
+<h2 id="milling-and-stuffing-the-board">Milling and stuffing the board</h2>
 <p>For milling the board I used the FabModules on Roland Modela MDX 15, site in FabLab Cascina.
 This is the loaded image board:</p>
 
@@ -120,7 +120,7 @@ This is the loaded image board:</p>
 
 <p><img src="/images/stuff2.jpg" alt="My helpful..screenshot" /></p>
 
-<h1 id="update-on-21-march-lilyfab">Update on 21 March: lilyfab</h1>
+<h1 id="update-on-21-april-lilyfab">Update on 21 April: lilyfab</h1>
 <p>Since the first example board was not compliant with the Hello World board design, I decided to try another design. 
 so I ‘m thinking to cloning the lilypad board. The LilyPad Arduino is a microcontroller board designed for wearables and e-textiles.  It can be sewn to fabric and similarly mounted power supplies, sensors and actuators with conductive thread. The board is based on the ATmega168V (the low-power version of the ATmega168) or the ATmega328V. The LilyPad Arduino was designed and developed by Leah Buechley and SparkFun Electronics. </p>
 
@@ -128,11 +128,13 @@ so I ‘m thinking to cloning the lilypad board. The LilyPad Arduino is a microc
 
 <p>I started from the eagle schematic of the original board, and I modified to mill a new board with only one layer!  The nex step is designing a second version of the board with two layers.</p>
 
-<p><img src="/images/lilyfab-modela.jpg" alt="My helpful..screenshot" /></p>
+<p><img src="/images/lilyfab-comp.jpg" alt="My helpful..screenshot" /></p>
 
-<p><img src="/images/lilyfab-mill.jpg" alt="My helpful..screenshot" /></p>
+<p><img src="/images/lilyfab-mill.jpeg" alt="My helpful..screenshot" /></p>
 
-<p><img src="/images/lilyfab-stuff.jpg" alt="My helpful..screenshot" /></p>
+<p>Then I programmed it in C:</p>
+
+<p><img src="/images/lilyfab-pr.jpeg" alt="My helpful..screenshot" /></p>
 
 <h1 id="source-files">Source Files</h1>
 
@@ -143,7 +145,8 @@ so I ‘m thinking to cloning the lilypad board. The LilyPad Arduino is a microc
 -<a href="/files/week06/lilyfab.brd">Lilyfab-eagle</a><br />
 -<a href="/files/week06/lilyfab.sch">Lilyfab-sch</a><br />
 -<a href="/files/week06/lilyfab-etching.png">Lilyfab-etching</a><br />
--<a href="/files/week06/lilyfab-cutting.png">Lilyfab-sch</a><br /></p>
+-<a href="/files/week06/lilyfab-cutting.png">Lilyfab-sch</a><br />
+-<a href="/files/week06/lilyfab.C">Lilyfab-Code</a><br /></p>
 
 
   </article>
@@ -199,8 +202,6 @@ so I ‘m thinking to cloning the lilypad board. The LilyPad Arduino is a microc
           
         </ul>
       </div>
-	  
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">esole</span> by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Francesca Mereu</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional License</a>.
 
       <div class="footer-col  footer-col-3">
         <p class="text">This a FabAcademy 2015 website. There are all processes of my work, experiments,  prototypes..
@@ -209,7 +210,7 @@ so I ‘m thinking to cloning the lilypad board. The LilyPad Arduino is a microc
     </div>
  <p class="rss-subscribe">subscribe <a href=" /feed.xml">via RSS</a></p>
   </div>
-
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Francesca Mereu</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
 </footer>
 
 

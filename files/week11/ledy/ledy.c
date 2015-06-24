@@ -1,11 +1,10 @@
 //
 //
-// hello.array.44.c
+// ledy.c
 //
-// Charlieplex LED array hello-world
-//
-// Neil Gershenfeld
-// 11/13/10
+/
+//Francesca Mereu
+// FabAcademy 2015
 //
 // (c) Massachusetts Institute of Technology 2010
 // This work may be reproduced, modified, distributed,

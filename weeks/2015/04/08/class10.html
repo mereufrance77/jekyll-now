@@ -73,7 +73,7 @@
 
 <p>For my final project I will also need to measure the flex of the foot,  and this can be done using the step-response mechanism. </p>
 
-<h1 id="flex-sensor">Flex sensor</h1>
+<h2 id="flex-sensor">Flex sensor</h2>
 <p>A simple flex sensor 2.2” in length. As the sensor is flexed, the resistance across the sensor increases. The resistance of the flex sensor changes when the metal pads are on the outside of the bend (text on inside of bend).</p>
 
 <p><img src="/images/flex-sensor.jpeg" alt="My helpful..screenshot" /></p>
@@ -183,8 +183,10 @@ void loop()
   </li>
 </ol>
 
-<h1 id="board-design-a-flex-board">Board design: a flex board</h1>
+<h1 id="board-design--flexino">Board design:  Flexino</h1>
 <p>The first step of the assignment was to decide what parts of the board would be necessary and how many of them were not. As i will need to save as much space as possible. I redesigned the whole board in order not not have an additional microcontroller neither its own programming pins, so the board reduces considerably its size and its price aswell.</p>
+
+<p><img src="/images/flexino-sch.jpeg" alt="My helpful..screenshot" /></p>
 
 <p>The board is redesigned with Eagle, incorporating just the necessary components:</p>
 
@@ -198,9 +200,10 @@ void loop()
   <li>head pin conector (6) <br /> </li>
 </ul>
 
-<p><img src="/images/FLEXINO.jpg" alt="My helpful..screenshot" /> <img src="/images/flex1.jpg" alt="My helpful..screenshot" /></p>
+<p><img src="/images/flexino-board.jpeg" alt="My helpful..screenshot" />  <img src="/images/flexinoboard.jpeg" alt="My helpful..screenshot" /> </p>
 
 <h2 id="programming-the-board">Programming the board</h2>
+<p>I programmed the board in C. This is the code.</p>
 
 <pre><code>#include &lt;avr/io.h&gt;
 #include &lt;util/delay.h&gt;
@@ -218,14 +221,14 @@ void loop()
 #define serial_port PORTA
 #define serial_direction DDRA
 #define serial_pin_out (1 &lt;&lt; PA3)
-</code></pre>
 
-<p>void put_char(volatile unsigned char *port, unsigned char pin, char txchar) {</p>
+void put_char(volatile unsigned char *port, unsigned char pin, char txchar) {
 
-<p>send character in txchar on port pin
-   //    assumes line driver (inverts bits)</p>
+send character in txchar on port pin
+   //    assumes line driver (inverts bits)
 
-<pre><code>   clear(*port,pin);
+
+   clear(*port,pin);
    bit_delay();
    //
    // unrolled loop to write data bits
@@ -280,64 +283,64 @@ void loop()
    //
    bit_delay();
    }
+
+ int main(void) {
+//
+// main
+//
+static char chr;
+//
+// set clock divider to /1
+//
+CLKPR = (1 &lt;&lt; CLKPCE);
+CLKPR = (0 &lt;&lt; CLKPS3) | (0 &lt;&lt; CLKPS2) | (0 &lt;&lt; CLKPS1) | (0 &lt;&lt; CLKPS0);
+//
+// initialize output pins
+//
+set(serial_port, serial_pin_out);
+output(serial_direction, serial_pin_out);
+//
+// init A/D
+//
+ADMUX = (0 &lt;&lt; REFS1) | (0 &lt;&lt; REFS0) // Vcc ref
+   | (0 &lt;&lt; ADLAR) // right adjust
+   |(0 &lt;&lt; MUX5) | (0 &lt;&lt; MUX4) | (0 &lt;&lt; MUX3) | (0 &lt;&lt; MUX2) | (1 &lt;&lt; MUX1) | (1 &lt;&lt; MUX0); // ADC3
+ADCSRA = (1 &lt;&lt; ADEN) // enable
+   | (1 &lt;&lt; ADPS2) | (1 &lt;&lt; ADPS1) | (1 &lt;&lt; ADPS0); // prescaler /128
+
+   while (1) {
+  //
+  // send framing
+  //
+  put_char(&amp;serial_port, serial_pin_out, 1);
+  char_delay();
+  put_char(&amp;serial_port, serial_pin_out, 2);
+  char_delay();
+  put_char(&amp;serial_port, serial_pin_out, 3);
+  char_delay();
+  put_char(&amp;serial_port, serial_pin_out, 4);
+  char_delay();
+  //
+  // initiate conversion
+  //
+  ADCSRA |= (1 &lt;&lt; ADSC);
+  //
+  // wait for completion
+  //
+  while (ADCSRA &amp; (1 &lt;&lt; ADSC))
+     ;
+  //
+  // send result
+  //
+  chr = ADCL;
+  put_char(&amp;serial_port, serial_pin_out, chr);
+  char_delay();
+  chr = ADCH;
+  put_char(&amp;serial_port, serial_pin_out, chr);
+  char_delay();
+  }
+   }
 </code></pre>
-
-<p>int main(void) {
-    //
-    // main
-    //
-    static char chr;
-    //
-    // set clock divider to /1
-    //
-    CLKPR = (1 « CLKPCE);
-    CLKPR = (0 « CLKPS3) | (0 « CLKPS2) | (0 « CLKPS1) | (0 « CLKPS0);
-    //
-    // initialize output pins
-    //
-    set(serial_port, serial_pin_out);
-    output(serial_direction, serial_pin_out);
-    //
-    // init A/D
-    //
-    ADMUX = (0 « REFS1) | (0 « REFS0) // Vcc ref
-       | (0 « ADLAR) // right adjust
-       |(0 « MUX5) | (0 « MUX4) | (0 « MUX3) | (0 « MUX2) | (1 « MUX1) | (1 « MUX0); // ADC3
-    ADCSRA = (1 « ADEN) // enable
-       | (1 « ADPS2) | (1 « ADPS1) | (1 « ADPS0); // prescaler /128</p>
-
-<p>while (1) {
-      //
-      // send framing
-      //
-      put_char(&amp;serial_port, serial_pin_out, 1);
-      char_delay();
-      put_char(&amp;serial_port, serial_pin_out, 2);
-      char_delay();
-      put_char(&amp;serial_port, serial_pin_out, 3);
-      char_delay();
-      put_char(&amp;serial_port, serial_pin_out, 4);
-      char_delay();
-      //
-      // initiate conversion
-      //
-      ADCSRA |= (1 « ADSC);
-      //
-      // wait for completion
-      //
-      while (ADCSRA &amp; (1 « ADSC))
-         ;
-      //
-      // send result
-      //
-      chr = ADCL;
-      put_char(&amp;serial_port, serial_pin_out, chr);
-      char_delay();
-      chr = ADCH;
-      put_char(&amp;serial_port, serial_pin_out, chr);
-      char_delay();
-      }
-   }</p>
 
 <h2 id="source-files">Source Files</h2>
 <p>-<a href="/files/week10/flexino.brd">eagle-brd</a><br />
@@ -403,8 +406,6 @@ void loop()
           
         </ul>
       </div>
-	  
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">esole</span> by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Francesca Mereu</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional License</a>.
 
       <div class="footer-col  footer-col-3">
         <p class="text">This a FabAcademy 2015 website. There are all processes of my work, experiments,  prototypes..
@@ -413,7 +414,7 @@ void loop()
     </div>
  <p class="rss-subscribe">subscribe <a href=" /feed.xml">via RSS</a></p>
   </div>
-
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Francesca Mereu</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
 </footer>
 
 
