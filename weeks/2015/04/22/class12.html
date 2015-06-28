@@ -21,7 +21,7 @@
 
   <div class="wrapper">
 
-    <a class="site-title" href=" /">  <img src="/images/fotoblog.jpg" alt="mia foto" style="height:40px; margin-right:10px;"/>Francesca Mereu</a>
+    <a class="site-title" href=" /">  <img src="/images/fotoblog.jpg" alt="mia foto" style="height:50px; margin-right:10px;"/>Francesca Mereu</a>
 
     <nav class="site-nav">
       <a href="#" class="menu-icon">
@@ -69,44 +69,105 @@
   </header>
 
   <article class="post-content">
-    <p>Actually, this was one of the weeks I’ve been most looking forward to. Composites have always intrigued me, and the opportunity to make one myself kept my head busy for a couple of weeks beforehand. I had all kinds of wild ideas to build. Starting from a model of shoes or a lamp to a coffee tray. However, weighing in my tooling options and my experience, the voice of reason made me choose something simpler. I decided to go for a fashion tray to use in the fablab  to complement to a fab-bar made in the last assignment.</p>
+    <p>Actually, this was one of the weeks I’ve been most looking forward to. Composites have always intrigued me, and the opportunity to make one myself kept my head busy for a couple of weeks beforehand. I had all kinds of wild ideas to build. Starting from a model of shoes or a lamp to a coffee tray. However, weighing in my tooling options and my experience, the voice of reason made me choose something simpler. I decided to go for a fashion tray to use in the fablab  to complement to a fab-bar made in the last assignment. So here in Cascina we are going to experiment with natural fiber composites: cotton, linen and sackcloth.</p>
 
-<h1 id="making-a-star-tray-mold-mold-machined">making a “STAR TRAY” mold (mold machined)</h1>
-<p>I designed  the 3d model of my “star tray” by antimony software.
-It was very interesting how is easy modify my first sketch of a lamp and trasforming it in a tray! </p>
+<h2 id="making--the-mold">Making  the mold</h2>
 
-<p><img src="/images/vassoio-antimony.jpg" alt="My helpful..screenshot" /></p>
+<h1 id="d-mold-design-star-tray">3D mold design: STAR TRAY</h1>
 
-<p>The first step to  make a mold for  my composite object is milling the piece  by the cnc machine.
-With the stl file I moved to the Linux cnc ShapeOko. LinuxCNC is a software system for computer control of machines such as milling machines, lathes, plasma cutters, cutting machines, robots..etc. The program is based on 7 differents steps and is quite intuitive to follow the process. The real first step is to define the size and orientation of the mold.
+<p>I drew a model in Antimony measuring 20x20x3 cm which I compound with a box measuring the same as my foam and exported to stl. It was very interesting how is easy modify my first sketch of a lamp and trasforming it in a tray! </p>
+
+<p><img src="/images/vassoio-antimony.jpg" alt="My helpful..screenshot" />
+<img src="/images/tray.jpg" alt="My helpful..screenshot" /></p>
+
+<h2 id="mold-machined">Mold machined</h2>
+<p>#preparing the foam</p>
+
+<p>This step is optional but I just wanted to have the same amount of foam as my design. Actually you only need to worry about your material being at least big enough to contain your design.</p>
+
+<p><img src="/images/foamcut.jpg" alt="My helpful..screenshot" /></p>
+
+<h1 id="miling-the-foam">miling the foam</h1>
+<p>The first step to  make a mold for  my composite object is milling the piece by the cnc machine.
+With the stl file I moved to the VETRIC CUT 3D. Cut3D which is actually the same as Partworks 3D that comes shipped with the Shopbot to produce the toolpaths. There are 3 types of toolpaths you can produce: Roughing that will remove most of the material quickly, finishing that will produce the final accurate surface and finally cutout if needed. For sackcloth you don’t need superb detail, here you are the settings that I used. It is nice that Cut3D gives you an estimate of time that it will take to mill:</p>
+
+<p>Roughing Toolpath</p>
+
+<p>-Ball Nose (6 mm)<br /></p>
+
+<p>Cutting parameters:<br /></p>
+
+<p>-pass depth: 10.0 mm<br />
+-stepover: 6.0  <br /> </p>
+
+<p>Feeds and Speed:<br /></p>
+
+<p>-splindle speed: 5000 r.p.m <br />
+-feed rate: 100  <br /> 
+-plunge rate : 30.0 <br /> </p>
+
+<p>Toolpath parameters: <br /> 
+-rapid clearance gap: 5.0 mm <br />
+-machining allowance: 1.0 mm  <br /> </p>
+
+<p><img src="/images/vassoio-cam.jpg" alt="My helpful..screenshot" /></p>
+
+<p><img src="/images/mold1.jpg" alt="My helpful..screenshot" /></p>
+
+<p>Then I move the code in the software for control machine: Linux cnc ShapeOko. LinuxCNC is a software system for computer control of machines such as milling machines, lathes, plasma cutters, cutting machines, robots..etc. The program is based on 7 differents steps and is quite intuitive to follow the process. The real first step is to define the size and orientation of the mold.
 Going forward with the process the program will ask you the Roughing toolpath. So we’ll define the tool dimensions and as well how the machine will “draw” our mold in the rough finishing. The options are both in x and y direction.</p>
 
 <p>Then is necessary fixing and preparing the foam for milling machine.
 First of all our foam is rigid expanded polyurethan. 
 To fix properly you have to use a double sided tape on the bottom of the foam. Than fix it to the base.</p>
 
-<p><img src="/images/vassoio-cam.jpg" alt="My helpful..screenshot" /></p>
+<p><img src="/images/linuxcnc.jpg" alt="My helpful..screenshot" /></p>
 
-<h2 id="compositing">compositing</h2>
+<p>Since my finishing toolpath settings were a bit rough I sanded a bit the surface. It’s probably not necessary because the fabric I am using is quite thick.</p>
+
+<p><img src="/images/foam.jpg" alt="My helpful..screenshot" /></p>
+
+<p>I cuted a couple of pieces of sackcloth about 25x25 cm</p>
+
+<p><img src="/images/laser-star.jpg" alt="My helpful..screenshot" /></p>
+
+<h2 id="composite-parts-cast">Composite part(s) cast</h2>
+
+<p><img src="/images/comp1.jpg" alt="My helpful..screenshot" /></p>
 
 <p>The next step is to use epoxy resin. The term epoxy has been widely adapted for many uses beyond fiber reinforced polymer composites. Today, epoxy adhesives are sold in local hardware stores, and epoxy resin is used as the binder in counter tops or coatings for floors. The myriad of uses for epoxy continues to expand, and variates of epoxies are constantly being developed to fit the industries and products they are used in. In the realm of fiber reinforced polymers (plastics), epoxy is used as the resin matrix to efficiently hold the fiber is place. It is compatible with all common reinforcing fibers including fiberglass, carbon fiber, aramid, and basalt.</p>
 
-<p><img src="/images/materials.jpg" alt="My helpful..screenshot" /></p>
+<p>Just prepared a mix of two parts of resin and one part of hardener. It does not really need to be ultra precise, just eyeball it. I mixed it well ( for about 45 seconds) because it is important: resin does nothing, hardener does nothing, mixed they form the epoxy.</p>
 
-<p><img src="/images/composite1.jpg" alt="My helpful..screenshot" /></p>
+<p>My layers were set up as following: 
+-foam mold  <br /> 
+- food film  <br /> 
+- impregnated fabric  <br /> 
+- impregnated fabric  <br /> 
+- food film  <br /> 
+- felt breather.  <br /> </p>
+
+<p><img src="/images/comp2.jpg" alt="My helpful..screenshot" /></p>
+
+<p><img src="/images/comp3.jpg" alt="My helpful..screenshot" /></p>
 
 <p>The application of the resin is easy. After having several (three) layers of material one on top of the other we can start to distribute it all along the surface. Than I put it on top of the foam using another layer of fabric in between. I press and  I’m  now ready to put everything inside the vacuum bag.</p>
 
-<p>Vacuum bagging (or vacuum bag laminating) is a clamping method that uses atmospheric pressure to hold the adhesive or resin-coated components of a lamination in place until the adhesive cures. (When discussing composites, “resin” generally refers to the resin system—mixed or cured resin and hardener—rather than unmixed 105 epoxy resin.) Modern room-temperature-cure adhesives have helped to make vacuum bag laminating techniques available to the average builder by eliminating the need for much of the sophisticated and expensive equipment required for laminating in the past. The effectiveness of vacuum bagging permits the laminating of a wide range of materials from traditional wood veneers to synthetic fibers and core materials..</p>
+<p><img src="/images/comp4.jpg" alt="My helpful..screenshot" /></p>
 
-<h2 id="large-3d-mold-designed-ft2-cad-files-provided">Large 3D mold designed (~ft2), CAD files provided</h2>
-<p>##Mold machined<br />
-##Composite part(s) cast<br />
-##Document process, tooling, materials, machine and feeds &amp; speeds used (if feeds &amp; speeds applicable)  NI</p>
+<p>Vacuum bagging (or vacuum bag laminating) is a clamping method that uses atmospheric pressure to hold the adhesive or resin-coated components of a lamination in place until the adhesive cures. (When discussing composites, “resin” generally refers to the resin system—mixed or cured resin and hardener—rather than unmixed 105 epoxy resin.)</p>
 
-<h2 id="source-files">Source Files</h2>
+<p>Modern room-temperature-cure adhesives have helped to make vacuum bag laminating techniques available to the average builder by eliminating the need for much of the sophisticated and expensive equipment required for laminating in the past. The effectiveness of vacuum bagging permits the laminating of a wide range of materials from traditional wood veneers to synthetic fibers and core materials..</p>
 
-<p><a href="/files/week12/star-tray.sb">star tray</a><br /></p>
+<p><img src="/images/comp5.jpg" alt="My helpful..screenshot" /></p>
+
+<h1 id="source-files">Source Files</h1>
+
+<p>-<a href="/files/week12/star-tray.sb">star tray-antimony</a><br />
+-<a href="/files/week12/star-tray.stl.zip">star tray-stl</a><br /></p>
+
+<p>-<a href="/files/week12/Roughing Toolpath-Top.ngc">star tray-mill</a><br />
+-<a href="/files/week12/Finishing Toolpath-Top.ngc">star tray-mill</a><br /></p>
 
 
   </article>

@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Networking and communications</title>
-  <meta name="description" content="This week goal is to establish a network between two or more different microcontrollers.I decide to connect my output board ledyboard with my input board fle...">
+  <meta name="description" content="This week goal is to design and build a wired &amp;/or wireless network connecting at least two processors">
 
   <link rel="stylesheet" href=" /css/main.css">
   <link rel="canonical" href=" /weeks/2015/04/29/class13.html">
@@ -21,7 +21,7 @@
 
   <div class="wrapper">
 
-    <a class="site-title" href=" /">  <img src="/images/fotoblog.jpg" alt="mia foto" style="height:40px; margin-right:10px;"/>Francesca Mereu</a>
+    <a class="site-title" href=" /">  <img src="/images/fotoblog.jpg" alt="mia foto" style="height:50px; margin-right:10px;"/>Francesca Mereu</a>
 
     <nav class="site-nav">
       <a href="#" class="menu-icon">
@@ -69,25 +69,40 @@
   </header>
 
   <article class="post-content">
-    <p>This week goal is to establish a network between two or more different microcontrollers.
-I decide to connect my output board ledyboard with my input board flex board</p>
+    <p>This week goal is to design and build a wired &amp;/or wireless network connecting at least two processors</p>
 
-<p><img src="/images/networking.jpeg" alt="My helpful..screenshot" /></p>
+<p>For the<br />
+I want to stabilish a serial comunication with Fabkit and (4) M2M board</p>
+
+<p><img src="/images/Ringboard3.png" alt="My helpful..screenshot" /></p>
 
 <h2 id="each-board-createddevice-used-to-do">each board created/device used to do</h2>
-<p>##what it does  to do
-##what protocol it uses and how it works  to do
-##what you learned  </p>
 
-<h2 id="source-files">Source Files</h2>
+<p><img src="/images/fabkit-pins.png" alt="My helpful..screenshot" /></p>
 
-<p><a href="/files/week13/lilyfab.brd"> Lilyfab-eagle </a><br /></p>
+<p><img src="/images/Ringboard3.png" alt="My helpful..screenshot" /></p>
 
-<p><a href="/files/week13/lilyfab.sch"> Lilyfab-sch </a><br /></p>
+<h2 id="what-it-does--to-do">what it does  to do</h2>
+<p>##what protocol it uses and how it works  to do</p>
 
-<p><a href="/files/week13/lilyfab-etching.png"> Lilyfab-etching </a><br /></p>
+<p>It does FabKit controller as the main gateway for communicating with the computer and four extension boards using ATTiny44 that control Pololu breakout drivers. All communication would happen via RS232 serial protocol.</p>
 
-<p><a href="/files/week13/lilyfab-cutting.png"> Lilyfab-sch </a><br /></p>
+<p>RS-232 is a standard for serial communication transmission of data. It formally defines the signals connecting between a DTE (data terminal equipment) such as a computer terminal, and a DCE (data circuit-terminating equipment, originally defined as data communication equipment[1]), such as a modem. The RS-232 standard is commonly used in computer serial ports. The standard defines the electrical characteristics and timing of signals, the meaning of signals, and the physical size and pinout of connectors. </p>
+
+<p>Here are shown the custom boards with RS232 star-architecture</p>
+
+<p><img src="/images/Ringboard3.png" alt="My helpful..screenshot" /></p>
+
+<h2 id="what-i-learned">what I learned</h2>
+
+<h1 id="source-files">Source Files</h1>
+
+<p><a href="/files/week16/serial.c"> Code </a><br /></p>
+
+<p><a href="/files/week16/serial.c"> Code </a><br />
+<a href="/files/week16/serial.c"> Code </a><br />
+<a href="/files/week16/serial.c"> Code </a><br />
+<a href="/files/week16/serial.c"> Code </a><br /></p>
 
 
   </article>
