@@ -80,16 +80,20 @@
 <p><img src="/images/vassoio-antimony.jpg" alt="My helpful..screenshot" />
 <img src="/images/tray.jpg" alt="My helpful..screenshot" /></p>
 
-<h2 id="mold-machined">Mold machined</h2>
-<p>#preparing the foam</p>
+<h1 id="preparing-the-foam">preparing the foam</h1>
 
 <p>This step is optional but I just wanted to have the same amount of foam as my design. Actually you only need to worry about your material being at least big enough to contain your design.</p>
 
 <p><img src="/images/foamcut.jpg" alt="My helpful..screenshot" /></p>
 
-<h1 id="miling-the-foam">miling the foam</h1>
+<h1 id="milling-the-foam">milling the foam</h1>
+
 <p>The first step to  make a mold for  my composite object is milling the piece by the cnc machine.
-With the stl file I moved to the VETRIC CUT 3D. Cut3D which is actually the same as Partworks 3D that comes shipped with the Shopbot to produce the toolpaths. There are 3 types of toolpaths you can produce: Roughing that will remove most of the material quickly, finishing that will produce the final accurate surface and finally cutout if needed. For sackcloth you don’t need superb detail, here you are the settings that I used. It is nice that Cut3D gives you an estimate of time that it will take to mill:</p>
+With the stl file I moved to the VETRIC CUT 3D. Cut3D which is actually the same as Partworks 3D that comes shipped with the Shopbot to produce the toolpaths. There are 3 types of toolpaths you can produce: Roughing that will remove most of the material quickly, finishing that will produce the final accurate surface and finally cutout if needed. For sackcloth you don’t need superb detail, here you are the settings that I used. </p>
+
+<p><img src="/images/vassoio-cam.jpg" alt="My helpful..screenshot" /></p>
+
+<p>It is nice that Cut3D gives you an estimate of time that it will take to mill:</p>
 
 <p>Roughing Toolpath</p>
 
@@ -109,10 +113,6 @@ With the stl file I moved to the VETRIC CUT 3D. Cut3D which is actually the same
 <p>Toolpath parameters: <br /> 
 -rapid clearance gap: 5.0 mm <br />
 -machining allowance: 1.0 mm  <br /> </p>
-
-<p><img src="/images/vassoio-cam.jpg" alt="My helpful..screenshot" /></p>
-
-<p><img src="/images/mold1.jpg" alt="My helpful..screenshot" /></p>
 
 <p>Then I move the code in the software for control machine: Linux cnc ShapeOko. LinuxCNC is a software system for computer control of machines such as milling machines, lathes, plasma cutters, cutting machines, robots..etc. The program is based on 7 differents steps and is quite intuitive to follow the process. The real first step is to define the size and orientation of the mold.
 Going forward with the process the program will ask you the Roughing toolpath. So we’ll define the tool dimensions and as well how the machine will “draw” our mold in the rough finishing. The options are both in x and y direction.</p>
