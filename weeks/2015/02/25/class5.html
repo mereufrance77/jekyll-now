@@ -72,6 +72,7 @@
     <p>This week assignment is about creating a 3D model which cannot be made subtractively and print it, and possibly 3D Scan an object and try to print it too. I made several experiments for both tasks, using different software and approaches.</p>
 
 <h2 id="modeling-a-3d-object-for-printing">Modeling a 3D object for printing</h2>
+
 <p>This part is very important to testing a prototype of my model, so I decided use first my antimony’s model of the heel , and later a high heel model downloaded and modified by me with 123 Meshmixer</p>
 
 <p>Also I was interested in studying the inherent limits of the FDM printing, as this is the technique used by the reprap Prusa and KentStrapper we have in the lab, trying to print objects with and without support structures and different plastic filaments</p>
@@ -79,6 +80,7 @@
 <p>I started with a mesh created using Antimony, resulting in an overall shape for a small lamp I wanted to build, by cloning and scaling the same component mesh in order to achieve some organic look.</p>
 
 <h1 id="creating-voronoi-wireframes">Creating voronoi wireframes</h1>
+
 <p>This alghorithm allows to segment a plane into poligons, starting from a point set. Each polygon has the characteristic that all the points in it are closer to the reference point than any other point in the point set. This basically creates a number of Voronoi Cell, whose boundaries when enlarged make up an aestetically pleasant wireframe of a shape. The same process can be applied to a solid object surface, resulting in an organic looking surface, similar to corals.</p>
 
 <p>Voronoi is widely used in computer graphics. Many implementations exist for any programming language, and several tutorials are available on the Internet for creating this effect on 3D Models. I decided to use Meshlab, and went on learning how to create Voronoi wireframes for the modeled objects with it. </p>
@@ -122,6 +124,7 @@
 <p><img src="/images/7mesh.jpg" alt="My helpful..screenshot" /></p>
 
 <h2 id="remeshing--a-model-with-123-meshmixer">Remeshing  a model with 123 Meshmixer</h2>
+
 <p>123 Meshmixer is a tool of 3D mashups and remixes. It’s a very good free software from Autodesk.
 I took a old model of high heel, that I had saved in the past and I thinkred to modify with MeshMixer.
 MeshMixer have a lot of tools. I used specials brush from sculpt, drag brush and inflate brush, and the result was good.  </p>
@@ -129,6 +132,7 @@ MeshMixer have a lot of tools. I used specials brush from sculpt, drag brush and
 <p><img src="/images/shoes2.jpg" alt="My helpful..screenshot" /></p>
 
 <h1 id="d-printing-the-objects">3-D printing the objects</h1>
+
 <p>I moved the objects into the Cura software provided with the Kentstrapper and prepared it for printing. The shoes mesh required a support structure to be printed, and while this would be possible with other kind of objects, accessing and removing the support structure from the inside of the mesh wouldn’t be possible. </p>
 
 <p><img src="/images/screenshot.jpg" alt="My helpful..screenshot" /></p>
@@ -144,6 +148,7 @@ MeshMixer have a lot of tools. I used specials brush from sculpt, drag brush and
 <p>For the second object, the voronoy heel, I  printed with a Prusa and I selected a new filament: colorfab XT. It is a copolyester filament produced from Amphora 3D Polymer bt Eastman Chemical Company. This filament has features excellent properties : high strength and very high toughness, odor Neutral processing, High Tg / improved temp. resistance.</p>
 
 <h1 id="d-scanning-objects">3-D scanning objects</h1>
+
 <p>For 3D scanning I approached the task using the Android version of 123D Catch application. I initially wanted to scan my red shoes. The 123D Catch application requires to take several pictures from every angle, and it guides the user by showing circles with a number of tabs corresponding to the different required angles, both at the same level of othe object and from a top-view. It does so using the built-in compass of the mobile phone.</p>
 
 <p><img src="/images/catch1.jpg" alt="My helpful..screenshot" /></p>

@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>mechanical design,machine design</title>
-  <meta name="description" content="This week we have to make a machine, including the end effector, build the passive parts and operate it manually. We have to document the group project and o...">
+  <meta name="description" content="This week we have to make a machine, including the end effector, build the passive parts and operate it manually.We have to document the group project and ou...">
 
   <link rel="stylesheet" href=" /css/main.css">
   <link rel="canonical" href=" /weeks/2015/05/20/class16.html">
@@ -70,7 +70,7 @@
 
   <article class="post-content">
     <p>This week we have to make a machine, including the end effector, build the passive parts and operate it manually.
- We have to document the group project and our individual contribution.</p>
+We have to document the group project and our individual contribution.</p>
 
 <p>So It was finally Machine week! It is a group project and it should span two weeks
 The groups got assigned a prefabricated packages with motors, paper cut recipies, motor controlling boards and the Gestalt software package. Now it was time to make a machine. We had a good lecture and introduction into what lay ahead. But afterwards I found myself terribly lost, more than usual. 
@@ -79,7 +79,7 @@ So, the team is composed by four components: Giacomo Falaschi, David Montenegro,
 <p>The idea is to make a machine that make wax rings.
 Giacomo has created a repository for the files in github: <a href="https://github.com/ifala/m2m_ring">m2m ring</a></p>
 
-<h2 id="ringbot--a-machine-that--make-wax-rings">Ringbot : a machine that  make wax rings</h2>
+<h3 id="what-we-did-m2m--a-machine-that--make-wax-rings">What we did: M2M , a machine that  make wax rings</h3>
 
 <p>The project is to build a 4-axis milling machine for jewlery.
 CNC Milling machines can be divided into three categories, determined by the number of axes they have (i.e. the number of directions the spindle can move). A basic 3d mill has 3 axes: X, Y, and Z, or in more simple terms: it can move the spindle side to side, back to front, and up and down. Such a machine is suitable for engravings or bas-reliefs – pieces that are cut only from one side. </p>
@@ -87,12 +87,19 @@ CNC Milling machines can be divided into three categories, determined by the num
 <p>Intermediate mill has 4 axes: X, Y, Z and rotary A axis. This 4th axis can be used as a lathe (i.e. the spindle can move while the axis is rotating), as an automatic flipper (i.e. cut one side of an object, instruct 4th axis to move 180 degrees, cut the second side), or as an indexed cutter (i.e. cut one segment, rotate by a specified number of degrees, cut second segment, etc.). For example, is possible to produce a ring with a pronged head by cutting from top and bottom and then repositioning the ring vertically to be finished off in a rotary fashion. Majority of traditional jewelry can be created this way.
 CNC mill could produce wax models that cast easily and require little to no post-production work because of the high quality of the surface.</p>
 
-<p><img src="/images/Chuck-ring.jpg" alt="My helpful..screenshot" /></p>
+<p><img src="/images/machine.jpg" alt="My helpful..screenshot" /></p>
 
-<h2 id="my-contribution">My contribution:</h2>
-<p>#design a splindle wax rings</p>
+<h3 id="what-i-did">What I did:</h3>
+<p>My contribution is divided in two parts:</p>
 
-<p>My work consists to design a spindle for the wax rings. I used Sketchup  software for the first  version and Rhinoceros for the second version.
+<ol>
+  <li>design a mechanical piece: a spindle ring<br /></li>
+  <li>setting up electronics;<br /></li>
+</ol>
+
+<h2 id="design-a-splindle-wax-rings">design a splindle wax rings</h2>
+
+<p>My work consists to design a spindle for the wax rings. I used Sketchup software for the first version and Rhinoceros for the second version.
 My reference for this design is a chuck for watch, like this:</p>
 
 <p><img src="/images/Chuck-ring.jpg" alt="My helpful..screenshot" /></p>
@@ -100,28 +107,21 @@ My reference for this design is a chuck for watch, like this:</p>
 <p>The spindle is composed by two parts:</p>
 
 <ol>
-  <li>“spindle”-principal part. This piece is a conical structure <br /></li>
+  <li>
+    <p>“spindle”-principal part. This piece is a conical structure <br /></p>
+  </li>
+  <li>
+    <p>“plug slightly conical”. <br />
+It serves to insert it in the spindle so as to create a radial expansion thereof to ensure the locking of the ring on the step in which 
+will be placed. </p>
+  </li>
 </ol>
 
-<p><img src="/images/spindle persp.png" alt="My helpful..screenshot" /></p>
+<p><img src="/images/rend mandrino.jpeg" alt="My helpful..screenshot" />
+<img src="/images/render.jpeg" alt="My helpful..screenshot" />
+<img src="/images/mandrino2.jpeg" alt="My helpful..screenshot" /></p>
 
-<ol>
-  <li>“plug slightly conical”.It serves to insert it in the spindle so as to create a radial expansion thereof to ensure the locking of the ring on the step in which will be placed.<br /></li>
-</ol>
-
-<p><img src="/images/rend mandrino.jpeg" alt="My helpful..screenshot" /></p>
-
-<p><img src="/images/mandrino2.jpeg" alt="My helpful..screenshot" /></p>
-
-<h1 id="setting-up-electronics">setting up Electronics:</h1>
-
-<p>Also I’m setting up the electronics,  </p>
-
-<p><img src="/images/prove mandrino.jpeg" alt="My helpful..screenshot" /></p>
-
-<p><img src="/images/prove mandrino.jpeg" alt="My helpful..screenshot" /></p>
-
-<h2 id="troubleshooting">Troubleshooting</h2>
+<h1 id="troubleshooting">troubleshooting</h1>
 
 <p>The spindle has been corrected to the extent of 9.75 mm at the base of attack, also to make the clutch integral with the shaft of the machine. It has a clamp in which to insert the bolt.</p>
 
@@ -129,7 +129,7 @@ My reference for this design is a chuck for watch, like this:</p>
 
 <p><img src="/images/prove mandrino.jpeg" alt="My helpful..screenshot" /></p>
 
-<h2 id="tips-for-improvement">Tips for improvement</h2>
+<h1 id="tips-for-improvement">tips for improvement</h1>
 
 <p>I was prepared a clamp that will be mounted on the ends of the spindle, it will prevent that the plug can not slide with the vibrations.</p>
 
@@ -139,12 +139,35 @@ My reference for this design is a chuck for watch, like this:</p>
 
 <p>That’s a second version of the splindle, with a different conical plug too. </p>
 
-<p><img src="/images/render.jpeg" alt="My helpful..screenshot" /></p>
+<h2 id="setting-up-electronics">setting up Electronics:</h2>
 
-<p><img src="/images/mandrino anello.jpeg" alt="My helpful..screenshot" /></p>
+<p>Also I’m setting up the electronics,for this, Troy designed some boards to connect the stepper motors with pololu and a fabduino. And I fabricate with the milling machine Roland MDX 15 all boards.  We were thinking to make a fabkit too.</p>
+
+<h1 id="board-createddevice-used-to-do">board created/device used to do</h1>
+
+<p><img src="/images/fabkit-pins.png" alt="My helpful..screenshot" /></p>
+
+<p><img src="/images/Ringboard3.png" alt="My helpful..screenshot" /></p>
+
+<p>It does FabKit controller as the main gateway for communicating with the computer and four extension boards using ATTiny44 that control Pololu breakout drivers. All communication would happen via RS232 serial protocol.</p>
+
+<p>RS-232 is a standard for serial communication transmission of data. It formally defines the signals connecting between a DTE (data terminal equipment) such as a computer terminal, and a DCE (data circuit-terminating equipment, originally defined as data communication equipment[1]), such as a modem. The RS-232 standard is commonly used in computer serial ports. The standard defines the electrical characteristics and timing of signals, the meaning of signals, and the physical size and pinout of connectors. </p>
+
+<p>We to  want to stabilish a serial comunication with Fabkit and (4) M2M board</p>
+
+<p>That are some pictures about this set up:</p>
+
+<p><img src="/images/Ringboard2.png" alt="My helpful..screenshot" /></p>
+
+<p><img src="/images/Ringboard-scheme.jpeg" alt="My helpful..screenshot" /></p>
+
+<p><img src="/images/elettronica.jpeg" alt="My helpful..screenshot" /></p>
+
+<p><img src="/images/mach-elect.jpeg" alt="My helpful..screenshot" /></p>
 
 <h2 id="what-i-learned">What I learned</h2>
-<p>For this assignment, I learn to set up the electronics for the machine and I also designed some mechanical piece, solving some  cinemtique problems.</p>
+
+<p>I think that what I learnes is not only  set up the electronics for the machine and I also designed some mechanical piece, solving some  cinemtique problems. The most important thing that I learned in this assignment is not related to the machine, but related to group management. We were working together until the final day to the machine presentation. I think that is important that each member of the group have a role and a specific work: “One is part of all” as say Aristotle .</p>
 
 <h1 id="sources">Sources</h1>
 
