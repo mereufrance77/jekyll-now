@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>output devices</title>
-  <meta name="description" content="The assignment for this week was to add a output device to a microcontroller board I have already designed, and program it to do something. ">
+  <meta name="description" content="Goal">
 
   <link rel="stylesheet" href=" /css/main.css">
   <link rel="canonical" href=" /weeks/2015/04/15/class11.html">
@@ -69,7 +69,9 @@
   </header>
 
   <article class="post-content">
-    <p>The assignment for this week was to add a output device to a microcontroller board I have already designed, and program it to do something. </p>
+    <h1 id="goal">Goal</h1>
+
+<p>The assignment for this week was to add a output device to a microcontroller board I have already designed, and program it to do something. </p>
 
 <p>As my interests are about wearable electronics, I wanted to investigate something with it and to advance some of my project design.</p>
 
@@ -78,7 +80,7 @@
 <p>My goal was to create a small wearable board with the connection for the battery, using the ATtiny44 and exposing as many leds as possible. I started from the eagle schematic of the helloboard and this time, I decided to have a more traditional square board, but to add six leds.</p>
 
 <p><img src="/images/ledy-schematic.png" alt="My helpful..screenshot" />
-<img src="/images/ledy.jpg" alt="My helpful..screenshot" />   <img src="/images/ledy-board.jpg" alt="My helpful..screenshot" /></p>
+<img src="/images/ledy.jpg" alt="My helpful..screenshot" />   <img src="/images/ledyboard.jpg" alt="My helpful..screenshot" /></p>
 
 <h1 id="led-array-charlieplexing">Led array-Charlieplexing</h1>
 
@@ -91,6 +93,13 @@
 <p><img src="/images/charlieplex.jpg" alt="My helpful..screenshot" /></p>
 
 <h1 id="programming-the-board">Programming the board</h1>
+
+<p>I started by uploading the program that Neil made using FabIsp,hello.array.44.c. To upload the program to the microcontroller type this in the terminal: </p>
+
+<pre><code>sudo make program-usbtiny
+</code></pre>
+
+<p>That’s the Code:</p>
 
 <pre><code>#include &lt;avr/io.h&gt;
 #include &lt;util/delay.h&gt;
@@ -165,7 +174,7 @@ int main(void) {
 </code></pre>
 
 <h1 id="what-i-learned">What I learned</h1>
-<p>This week I learned to </p>
+<p>I am starting to feel that I can now achieve things that I could not do in the past. But I don’t know if this is because I learned something or I making something…However I’m learning every day something!</p>
 
 <h1 id="source-files">Source Files</h1>
 

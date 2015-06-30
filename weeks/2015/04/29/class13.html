@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Networking and communications</title>
-  <meta name="description" content="This week goal is to design and build a wired &amp;/or wireless network connecting at least two processors">
+  <meta name="description" content="GoalThis week goal is to design and build a wired &amp;/or wireless network connecting at least two processors">
 
   <link rel="stylesheet" href=" /css/main.css">
   <link rel="canonical" href=" /weeks/2015/04/29/class13.html">
@@ -69,40 +69,90 @@
   </header>
 
   <article class="post-content">
-    <p>This week goal is to design and build a wired &amp;/or wireless network connecting at least two processors</p>
+    <h1 id="goal">Goal</h1>
+<p>This week goal is to design and build a wired &amp;/or wireless network connecting at least two processors</p>
 
-<p>For the<br />
-I want to stabilish a serial comunication with Fabkit and (4) M2M board</p>
+<h1 id="each-board-createddevice-used-to-do">each board created/device used to do</h1>
 
-<p><img src="/images/Ringboard3.png" alt="My helpful..screenshot" /></p>
+<p>I was thinking to use two boards created by me: ledy board and press board. It could be a good experiment to make some advances to my final project. So it probably I could make a interaction about the insole and the led pendant.</p>
 
-<h2 id="each-board-createddevice-used-to-do">each board created/device used to do</h2>
+<p>These are the boards:</p>
 
-<p><img src="/images/fabkit-pins.png" alt="My helpful..screenshot" /></p>
+<p><img src="/images/ledyboard.jpg" alt="My helpful..screenshot" /> <img src="/images/pressboard.jpg" alt="My helpful..screenshot" /></p>
 
-<p><img src="/images/Ringboard3.png" alt="My helpful..screenshot" /></p>
+<h1 id="what-protocol-it-uses-and-how-it-works--to-do">what protocol it uses and how it works  to do</h1>
 
-<h2 id="what-it-does--to-do">what it does  to do</h2>
-<p>##what protocol it uses and how it works  to do</p>
+<p>All communication would happen via RS232 serial protocol.</p>
 
-<p>It does FabKit controller as the main gateway for communicating with the computer and four extension boards using ATTiny44 that control Pololu breakout drivers. All communication would happen via RS232 serial protocol.</p>
+<p>RS-232 is a standard for serial communication transmission of data. It formally defines the signals connecting between a DTE (data terminal equipment) such as a computer terminal, and a DCE (data circuit-terminating equipment, originally defined as data communication equipment), such as a modem. The RS-232 standard is commonly used in computer serial ports. The standard defines the electrical characteristics and timing of signals, the meaning of signals, and the physical size and pinout of connectors. </p>
 
-<p>RS-232 is a standard for serial communication transmission of data. It formally defines the signals connecting between a DTE (data terminal equipment) such as a computer terminal, and a DCE (data circuit-terminating equipment, originally defined as data communication equipment[1]), such as a modem. The RS-232 standard is commonly used in computer serial ports. The standard defines the electrical characteristics and timing of signals, the meaning of signals, and the physical size and pinout of connectors. </p>
+<h1 id="wired-network">wired network</h1>
 
-<p>Here are shown the custom boards with RS232 star-architecture</p>
+<p>The network is a real time virtual control, so my computer (virtual control) is connected to the nodes and sends characters over the serial bus in real time. Every node of the network is listening to the serial line. If the correct character is received, the board executes an instruction.</p>
 
-<p><img src="/images/Ringboard3.png" alt="My helpful..screenshot" /></p>
+<p>The bridge board is connected to a computer via a FTDI cable. The two node boards are connected to the bridge board.</p>
 
-<h2 id="what-i-learned">what I learned</h2>
+<h1 id="how-the-system-works">how the system works</h1>
+<p>The network is a real time virtual control, so my computer (virtual control) is connected to the nodes and sends characters over the serial bus in real time. Every node of the network is listening to the serial line. If the correct character is received, the board executes an instruction.</p>
+
+<h1 id="node-0-the-bridge">node 0. the bridge</h1>
+
+<p>The first node of the network is the bridge board. The bridge interfaces the computer with the rest of the nodes. You can add the FTDI connector to any of the nodes-
+I used the hello.bus.45.c code. I did a little modification to the software of these boards, in base to the Attiny44 datsheet.</p>
+
+<p>That’s the modified code:</p>
+
+<pre><code>#define led_port PORTA
+#define led_direction DDRA
+#define led_pin (1 &lt;&lt; PA7)
+
+#define serial_port PORTB
+#define serial_direction DDRB
+#define serial_pins PINB
+#define serial_pin_in (1 &lt;&lt; PB0)
+#define serial_pin_out (1 &lt;&lt; PB1)
+
+#define node_id '0'
+</code></pre>
+
+<h1 id="node1">node1</h1>
+<p>This board is listening and waiting to receive any of 2 specific characters.
+That’s the modified code:</p>
+
+<pre><code>#define led_port PORTA
+#define led_direction DDRA
+#define led_pin (1 &lt;&lt; PA7)
+
+#define serial_port PORTB
+#define serial_direction DDRB
+#define serial_pins PINB
+#define serial_pin_in (1 &lt;&lt; PB0)
+#define serial_pin_out (1 &lt;&lt; PB1)
+
+#define node_id '1'
+</code></pre>
+
+<p>I need my bridge board to power my node boards and connect them to TX and RX.  I plug my boards in as shown in the picture above. </p>
+
+<p><img src="/images/networking.jpeg" alt="My helpful..screenshot" /></p>
+
+<p>Then I flashed the node board as node 1.</p>
+
+<pre><code>sudo make -f hello.bus.44.make program-usbtiny
+</code></pre>
+
+<h1 id="the-computer-side">the computer side</h1>
+<p>In the computer side the serial commands (characters) can be sent sent using the Arduino IDE serial monitor or a terminal emulator.</p>
+
+<h1 id="what-i-learned">what I learned</h1>
+<p>Networking is like working in a team for the same results.  A multiprocessing system is better than having a single powerful processor. I know this very well because I have coordinated teams at least six persons, and no matter when we were joint we always think that with our brains working together in parallel processing could make the double that only one brain. And it happens the same with Fablabs, it is not the machines, or the processes, the most powerful feature of a Fablab is the network of Fablabs.</p>
 
 <h1 id="source-files">Source Files</h1>
 
-<p><a href="/files/week16/serial.c"> Code </a><br /></p>
-
-<p><a href="/files/week16/serial.c"> Code </a><br />
-<a href="/files/week16/serial.c"> Code </a><br />
-<a href="/files/week16/serial.c"> Code </a><br />
-<a href="/files/week16/serial.c"> Code </a><br /></p>
+<p><a href="/files/week13/hello.bus.44-0.c"> node0-C </a><br />
+<a href="/files/week13/makefile"> node0-makefile </a><br />
+<a href="/files/week13/hello.bus.44-1.c"> node1-C </a><br />
+<a href="/files/week13/makefile"> node1-makefile</a><br /></p>
 
 
   </article>
