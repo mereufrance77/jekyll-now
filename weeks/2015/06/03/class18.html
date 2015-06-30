@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Project development </title>
-  <meta name="description" content="Goal of this final week is to document and build our final project, and track and document our progress">
+  <meta name="description" content="GoalGoal of this final week is to document and build our final project, and track and document our progress">
 
   <link rel="stylesheet" href=" /css/main.css">
   <link rel="canonical" href=" /weeks/2015/06/03/class18.html">
@@ -69,7 +69,10 @@
   </header>
 
   <article class="post-content">
-    <p>Goal of this final week is to document and build our final project, and track and document our progress</p>
+    <h1 id="goal">Goal</h1>
+<p>Goal of this final week is to document and build our final project, and track and document our progress</p>
+
+<p><img src="/images/esole4.jpg" alt="My helpful..screenshot" /></p>
 
 <h2 id="project-results">Project results</h2>
 
@@ -163,26 +166,28 @@
 
 <p>As I ‘m designer is important for me to make a good design for the shoe and the electronic module.
 I started from the concept of the heel  but in a second step I studied the insole and from it I build my shoes. 
-I was modelling this part by  Rhinoceros and Sketchup, 3d computer graphics and computer aided design (CAD)applications software. Rhinoceros geometry is based on NURBS mathematical model, which focuses on producing mathematically precise rapresentation of curves and freeform surface in computer graphics. I prefered to use it for modelling the shoe, because I thinked to use Grasshopper, a  Rhino plug-in,  to project parametrically the shoe case.</p>
+I was modelling this part by  Rhinoceros and Sketchup, 3d computer graphics and computer aided design (CAD)applications software. Rhinoceros geometry is based on NURBS mathematical model, which focuses on producing mathematically precise rapresentation of curves and freeform surface in computer graphics. I prefered to use it for modelling the shoe, because I thinked to use Grasshopper, a  Rhino plug-in, to project parametrically the shoe case.</p>
 
-<p><img src="/images/rhino.jpeg" alt="My helpful..screenshot" /></p>
-
-<p><img src="/images/I-cube-ali~2~.png" alt="My helpful..screenshot" /></p>
+<p><img src="/images/rhino1.jpeg" alt="My helpful..screenshot" />
+<img src="/images/rhino2.jpeg" alt="My helpful..screenshot" /></p>
 
 <h3 id="d-printing">3d printing</h3>
 
-<p>The part of the packaging of the project is built with 3D printing and split in two parts: shoe and module,a little enclosure for the board and battery. Other parts don’t have any special requirements to be printed. Expect about 12 hours of printing to build the whole set at reasonable speed settings (i.e. 80mm/s). I used the WASP Delta 20x40. I made the insole in silicon rubber with a molding and casting technique, and the sensor with the velostat. </p>
-
-<p>The components to be printed are:</p>
+<p>The part of the packaging of the project is built with 3D printing and split in two parts: shoe and module,a little enclosure for the board and battery. Other parts don’t have any special requirements to be printed. 
+Expect about 15 hours of printing to build the whole set at reasonable speed settings (i.e. 80mm/s). 
+I used the WASP Delta 20x40. I made the insole in silicon rubber with a molding and casting technique, and the sensor with the velostat. 
+The components to be printed are:</p>
 
 <ul>
   <li>enclosure-shoe <br />    </li>
   <li>case-module for electronics <br /></li>
 </ul>
 
-<p><img src="/images/esole2.jpeg" alt="My helpful..screenshot" /></p>
+<h1 id="setting-the-printing">Setting the printing</h1>
 
-<p><img src="/images/molec.jpeg" alt="My helpful..screenshot" /></p>
+<p><img src="/images/curashoes.jpeg" alt="My helpful..screenshot" /></p>
+
+<p><img src="/images/shoeprint1.jpeg" alt="My helpful..screenshot" />  <img src="/images/shoeprint2.jpeg" alt="My helpful..screenshot" /></p>
 
 <h3 id="molding-and-casting-the-insole">molding and casting: the insole</h3>
 
@@ -249,13 +254,14 @@ Void Loop() {
 
 <h2 id="electronic-design-press-board">electronic design: “press-board”</h2>
 
-<p>This analog press button works with resistive principle. I designed the pressboard considerating three pins : two for the sensor (press1 and press2) and another for the VCC. These are the images of the schematic board from Eagle cad and the soldered board.</p>
+<p>This analog press button works with resistive principle. I designed the pressboard considerating three pins: two for the sensor (press1 and press2) and another for the VCC. These are the images of the schematic board from Eagle cad and the soldered board.</p>
 
-<p><img src="/images/pressboard.png" alt="My helpful..screenshot" /></p>
-
-<p><img src="/images/board.jpg" alt="My helpful..screenshot" /></p>
+<p><img src="/images/pressboard.png" alt="My helpful..screenshot" /> <img src="/images/board.jpg" alt="My helpful..screenshot" /></p>
 
 <h3 id="testing-the-sensor-part2">Testing the sensor (part2)</h3>
+
+<p><img src="/images/insole1.jpg" alt="My helpful..screenshot" /></p>
+
 <p>Finally I have programed the board in C. This is the code:</p>
 
 <p>In the first part I defined the macro</p>
@@ -468,7 +474,7 @@ make program-usbtiny
 
 <p>The complete demo looks like the following:</p>
 
-<p><img src="http://" alt="esole" /></p>
+<p><a href="https://vimeo.com/131591114">esole</a></p>
 
 <h2 id="downloads">Downloads</h2>
 
@@ -498,7 +504,7 @@ make program-usbtiny
     <div class="footer-col-wrapper">
       <div class="footer-col  footer-col-1">
         <ul class="contact-list">
-          <li>Francesca Mereu</li>
+          <!-- <li>Francesca Mereu</li> -->
           <li><a href="mailto:martech.platform@gmail.com">martech.platform@gmail.com</a></li>
         </ul>
       </div>
@@ -539,11 +545,13 @@ make program-usbtiny
       <div class="footer-col  footer-col-3">
         <p class="text">This a FabAcademy 2015 website. There are all processes of my work, experiments,  prototypes..
 </p>
+                 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License"   style="border-width:0"     src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Francesca Mereu</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
       </div>
     </div>
  <p class="rss-subscribe">subscribe <a href=" /feed.xml">via RSS</a></p>
+
+
   </div>
-           <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:10"     src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Francesca Mereu</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
 </footer>
 
 
